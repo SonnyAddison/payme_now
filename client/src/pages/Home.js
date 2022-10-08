@@ -6,23 +6,19 @@ import ProfileList from '../components/ProfileList';
 import { QUERY_PROFILES } from '../utils/queries';
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_PROFILES);
-  const profiles = data?.profiles || [];
+  
 
   return (
     <main>
-      <div className="flex-row justify-center">
-        <div className="col-12 col-md-10 my-3">
-          {loading ? (
-            <div>Loading...</div>
-          ) : (
-            <ProfileList
-              profiles={profiles}
-              title="Here's the current roster of friends..."
-            />
-          )}
-        </div>
-      </div>
+     <div class="container">
+                    
+    <ul class="nav nav-pills" role="tablist">
+     <li class="active"><a href="#">Home</a></li>
+     <li><a href="#">Services</a></li>
+     <li><a href="#">Our Promise</a></li>
+     <li><a href="#">Sign-In/Sign-Up</a></li>        
+  </ul>
+</div>
     </main>
   );
 };

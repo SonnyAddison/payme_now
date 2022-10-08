@@ -8,10 +8,12 @@ import Auth from '../utils/auth';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    name: '',
     email: '',
+    company: '',
     password: '',
   });
+
+  
   const [addProfile, { error, data }] = useMutation(ADD_PROFILE);
 
   // update state based on form input changes
@@ -28,7 +30,8 @@ const Signup = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
-
+    const { password, confirmPassword } = formState;
+    password !== confirmPassword ? alert('passwords dont match') : alert('thank you for signing up!')
     try {
       const { data } = await addProfile({
         variables: { ...formState },
@@ -55,7 +58,7 @@ const Signup = () => {
               <form onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
-                  placeholder="Your username"
+                  placeholder="Your Email"
                   name="name"
                   type="text"
                   value={formState.name}
@@ -63,10 +66,10 @@ const Signup = () => {
                 />
                 <input
                   className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
+                  placeholder="Your Company name"
+                  name="company"
+                  type="text"
+                  value={formState.company}
                   onChange={handleChange}
                 />
                 <input
