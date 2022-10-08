@@ -8,7 +8,14 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Auth from "./utils/auth"
 
+<<<<<<< HEAD
+import Home from './pages/Home';
+import Profile from './pages/Payroll';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
+=======
 // noting out old pages - do we need these ?
 // import Home from './pages/Originalrepopages/Homeold';
 // import Profile from './pages/Profileold';
@@ -16,6 +23,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import Login from './pages/Loginold';
 // import Header from './components/Header';
 // import Footer from './components/Footer';
+>>>>>>> main
 
 import PortfolioContainer from "./PortfolioContainer";
 const App = () => <PortfolioContainer />;
@@ -37,6 +45,43 @@ const App = () => <PortfolioContainer />;
 //   };
 // });
 
+<<<<<<< HEAD
+function App() {
+  return (
+    <ApolloProvider client={client}>
+      <Router>
+        <div className="flex-column justify-flex-start min-100-vh">
+          < Home />
+          <div className="container">
+            <Routes>
+              <Route 
+                path="/" 
+                element={<Home />} 
+              />
+              <Route 
+                path="/login" 
+                element={<Login />} 
+              />
+              <Route 
+                path="/service" 
+                element={<Signup />} 
+              />
+              <Route
+                path="/myprofile"
+                element={< Profile />}
+                />
+              <Route 
+                path="/payroll" 
+                element={<Payroll />} 
+              />
+            </Routes>
+          </div>
+        </div>
+      </Router>
+    </ApolloProvider>
+  );
+}
+=======
 // const client = new ApolloClient({
 //   link: authLink.concat(httpLink),
 //   cache: new InMemoryCache(),
@@ -78,5 +123,6 @@ const App = () => <PortfolioContainer />;
 //     </ApolloProvider>
 //   );
 // }
+>>>>>>> main
 
 export default App;
