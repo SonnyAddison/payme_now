@@ -1,3 +1,4 @@
+// noted out
 import decode from 'jwt-decode';
 
 class AuthService {
