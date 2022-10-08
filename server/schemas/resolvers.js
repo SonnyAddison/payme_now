@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { Profile } = require('../models');
+const { Profile, Company } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -18,6 +18,12 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+    company: async (parent, { companyId }) => {
+      return Company.findOne({ _id: companyId });
+    },
+    companies: async () => {
+      return Company.find();
+    }
   },
 
   Mutation: {
@@ -45,13 +51,13 @@ const resolvers = {
     },
 
     // Add a third argument to the resolver to access data in our `context`
-    addSkill: async (parent, { profileId, skill }, context) => {
+    addCompany: async (parent, { profileId, company }, context) => {
       // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
       if (context.user) {
         return Profile.findOneAndUpdate(
           { _id: profileId },
           {
-            $addToSet: { skills: skill },
+            $addToSet: { company: company },
           },
           {
             new: true,
@@ -70,11 +76,11 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
     // Make it so a logged in user can only remove a skill from their own profile
-    removeSkill: async (parent, { skill }, context) => {
+    removeCompany: async (parent, { company }, context) => {
       if (context.user) {
         return Profile.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { skills: skill } },
+          { $pull: { company: company } },
           { new: true }
         );
       }
