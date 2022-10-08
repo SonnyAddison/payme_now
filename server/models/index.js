@@ -1,3 +1,4 @@
 import Company from "./Company";
+import Employee from "./Employee"
 
-module.exports = { Company };
+module.exports = { Company, Employee };
