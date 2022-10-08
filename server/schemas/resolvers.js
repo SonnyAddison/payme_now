@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { Profile } = require('../models');
+const { Profile, Company } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -18,6 +18,12 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+    company: async (parent, { companyId }) => {
+      return Company.findOne({ _id: companyId });
+    },
+    companies: async () => {
+      return Company.find();
+    }
   },
 
   Mutation: {
