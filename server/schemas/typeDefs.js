@@ -9,6 +9,14 @@ const typeDefs = gql`
     company: [String]!
   }
 
+  type Company {
+    _id: ID
+    name: String
+    address: String
+    taxId: String
+    employees: [Employee]!
+  }
+
   type Auth {
     token: ID!
     profile: Profile
