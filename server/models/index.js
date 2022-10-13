@@ -1,3 +1,4 @@
-import Company from "./Company";
+const Company = require("./Company");
+const Employee = require("./Employee");
 
-module.exports = { Company };
+module.exports = { Company, Employee };
