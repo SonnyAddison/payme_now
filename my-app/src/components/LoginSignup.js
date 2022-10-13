@@ -1,67 +1,97 @@
-import React, { useState } from "react";
-import Tab from 'react-bootstrap/Tab';
-import Tabs from 'react-bootstrap/Tabs';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import React, { useState } from 'react';
+
+import {
+    MDBContainer,
+    MDBTabs,
+    MDBTabsItem,
+    MDBTabsLink,
+    MDBTabsContent,
+    MDBTabsPane,
+    MDBBtn,
+    MDBInput,
+    MDBCheckbox
+  }
+  from 'mdb-react-ui-kit';
+
+  
 
 
 
-const Login = () => {
-    const [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+const LoginSignupComponent = () => {
+ const [justifyActive, setJustifyActive] = useState('tab1');;
+
+  const handleJustifyClick = (value) => {
+    if (value === justifyActive) {
+      return;
+    }
+
+    setJustifyActive(value);
+  };
 
     return ( 
-    
-    <>
-        <Tabs
-      defaultActiveKey="profile"
-      id="uncontrolled-tab-example"
-      className="mb-3"
-    >
-      <Tab eventKey="home" title="Home">
+        <div >
+        <MDBContainer id='loginSignup' className="p-3 my-5 d-flex flex-column w-50">
+
+      <MDBTabs pills justify className='mb-3 d-flex flex-row justify-content-between'>
+        <MDBTabsItem>
+          <MDBTabsLink id="formBtn" onClick={() => handleJustifyClick('tab1')} active={justifyActive === 'tab1'}>
+            Login
+          </MDBTabsLink>
+        </MDBTabsItem>
+        <MDBTabsItem>
+          <MDBTabsLink id="formBtn" onClick={() => handleJustifyClick('tab2')} active={justifyActive === 'tab2'}>
+            Register
+          </MDBTabsLink>
+        </MDBTabsItem>
+      </MDBTabs>
+
+      <MDBTabsContent>
+
+        <MDBTabsPane show={justifyActive === 'tab1'}>
+
+  
+
+
+
+          <MDBInput wrapperClass='mb-4' label='Email address' id='form1' type='email'/>
+          <MDBInput wrapperClass='mb-4' label='Password' id='form1' type='password'/>
+
+          <div className="d-flex justify-content-between mx-4 mb-4">
+            <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
+          </div>
+
+          <MDBBtn id="formBtn" className="mb-4 w-100">Sign in</MDBBtn>
+       
+
+        </MDBTabsPane>
+
+        <MDBTabsPane show={justifyActive === 'tab2' } id="tab2" >
+
      
-      </Tab>
-      <Tab eventKey="profile" title="Profile">
-       
-      </Tab>
-      <Tab eventKey="contact" title="Contact" disabled>
-       
-      </Tab>
-    </Tabs>
-   
-    <Button variant="primary" onClick={handleShow}>
-      Add Employee
-    </Button>
 
-    <Modal  className="modalBody" show={show} onHide={handleClose}>
-      <Modal.Header closeButton>
-        <Modal.Title>Employee Information</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-       
-        
-        <label for="fname">First name:</label>
-  <input type="text" id="fname" name="fname" value="John"/>
-  <label for="lname">Last name:</label>
-  <input type="text" id="lname" name="lname" value="Doe"/>
-  <input type="submit" value="Submit"/>
-       
-        
 
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
-          Close
-        </Button>
-        <Button variant="primary" onClick={handleClose}>
-          Save Changes
-        </Button>
-      </Modal.Footer>
-    </Modal>
-  </>
+          
+
+          <MDBInput wrapperClass='mb-4' label='Name' id='form1' type='text'/>
+          <MDBInput wrapperClass='mb-4' label='Username' id='form1' type='text'/>
+          <MDBInput wrapperClass='mb-4' label='Email' id='form1' type='email'/>
+          <MDBInput wrapperClass='mb-4' label='Password' id='form1' type='password'/>
+
+          <div className='d-flex justify-content-center mb-4'>
+            <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I have read and agree to the terms' />
+          </div>
+
+          <MDBBtn id="formBtn" className="mb-4 w-100">Sign up</MDBBtn>
+
+        </MDBTabsPane>
+
+      </MDBTabsContent>
+
+    </MDBContainer>
+    </div>
+    
  );
 };
 
-export default Login;
+export default LoginSignupComponent;
