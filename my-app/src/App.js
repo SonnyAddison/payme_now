@@ -1,10 +1,15 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom'
-import Login from './components/LoginSignup'
-import Header from './components/Header';
-import PromisePage from './components/Promise';
+import { Container, Row, Col } from 'react-bootstrap';
+import SiteImage from './components/SiteImage'
+import OurPromise from './Pages/Promise';
 import './App.css'
-import Payroll from './components/Payroll';
+import  Home  from './Pages/Home'
+import Payroll from './Pages/Payroll'
+import LoginSignup from './Pages/LoginSignup';
+import Services from './Pages/Services'
+
+
 
 
 
@@ -15,18 +20,27 @@ import Payroll from './components/Payroll';
 
 function App() {
   return (
-  <div className="main">
-      < Header />
+ 
+ 
+  <Container id="layout">
+       < Home />
+    <SiteImage/>
+      
       <Routes>
         
         <Route path="/payrollsheet" element = {<Payroll />}/>
           
-        <Route path="/login" element= {<Login />}/>
+        <Route path="/login" element= {<LoginSignup />}/>
           
-        <Route path="/promise" element= {<PromisePage />}/>
+        <Route path="/promise" element= {<OurPromise />}/>
+
+        <Route path="/services" element= {<Services />}/>
           
       </Routes>
- </div>
+      
+    
+      </Container>
+
          
   );
 }
