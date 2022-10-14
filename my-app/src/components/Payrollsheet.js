@@ -5,10 +5,10 @@ import EmployeeModal from "./EmployeeModals";
 
 
 
-
 const Payrollsheet = () => {
 
 //
+
 
 
 
@@ -116,11 +116,17 @@ const Payrollsheet = () => {
     ]
 
     
+    const styles = {
+      aboutStyle: {
+        background: '#000000',
+      },
+    };
+    
   
   
     return (
 
-      
+    <nav style={styles.aboutStyle}> 
     <div  id="table">
     <h2>Payroll Sheet</h2>
     <EmployeeModal/>
@@ -152,7 +158,7 @@ const Payrollsheet = () => {
      
       
        </div>
-
+        </nav>
  
     );
   };

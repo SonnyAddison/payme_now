@@ -1,19 +1,22 @@
 import React from 'react';
-//noting out from original repo
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  createHttpLink,
-} from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Auth from "./utils/auth"
 
-import Home from './pages/Home';
-import Profile from './pages/Payroll';
-import Signup from './pages/Signup';
-import Login from './pages/Login';
+// //noting out from original repo
+// import {
+//   ApolloClient,
+//   InMemoryCache,
+//   ApolloProvider,
+//   createHttpLink,
+// } from '@apollo/client';
+// import { setContext } from '@apollo/client/link/context';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// noting out OLD Original pages - do we need these ?
+// import Home from './pages/Originalrepopages/Homeold';
+// import Profile from './pages/Profileold';
+// import Signup from './pages/Signupold';
+// import Login from './pages/Loginold';
+// import Header from './components/Header';
+// import Footer from './components/Footer';
 
 import PortfolioContainer from "./PortfolioContainer";
 const App = () => <PortfolioContainer />;
@@ -35,43 +38,6 @@ const App = () => <PortfolioContainer />;
 //   };
 // });
 
-<<<<<<< HEAD
-function App() {
-  return (
-    <ApolloProvider client={client}>
-      <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
-          < Home />
-          <div className="container">
-            <Routes>
-              <Route 
-                path="/" 
-                element={<Home />} 
-              />
-              <Route 
-                path="/login" 
-                element={<Login />} 
-              />
-              <Route 
-                path="/service" 
-                element={<Signup />} 
-              />
-              <Route
-                path="/myprofile"
-                element={< Profile />}
-                />
-              <Route 
-                path="/payroll" 
-                element={<Payroll />} 
-              />
-            </Routes>
-          </div>
-        </div>
-      </Router>
-    </ApolloProvider>
-  );
-}
-=======
 // const client = new ApolloClient({
 //   link: authLink.concat(httpLink),
 //   cache: new InMemoryCache(),
@@ -113,6 +79,5 @@ function App() {
 //     </ApolloProvider>
 //   );
 // }
->>>>>>> main
 
 export default App;
