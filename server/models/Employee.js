@@ -1,5 +1,5 @@
-const { Schema, mondel } = require('mongoose');
-const bcrypt = require('bcrypt');
+const { Schema, model } = require('mongoose');
+
 
 const employeeSchema = new Schema({
     name: {
@@ -33,6 +33,18 @@ const employeeSchema = new Schema({
         trim: true,
     },
     stateTaxRate: {
+        type: int,
+        required: true,
+        unique: false,
+        trim: true,
+    },
+    hoursWorked: {
+        type: int,
+        required: true,
+        unique: false,
+        trim: true,
+    },
+    payRate: {
         type: int,
         required: true,
         unique: false,

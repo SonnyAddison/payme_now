@@ -10,20 +10,10 @@ import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Auth from "./utils/auth"
 
-<<<<<<< HEAD
 import Home from './pages/Home';
 import Profile from './pages/Payroll';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-=======
-// noting out old pages - do we need these ?
-// import Home from './pages/Originalrepopages/Homeold';
-// import Profile from './pages/Profileold';
-// import Signup from './pages/Signupold';
-// import Login from './pages/Loginold';
-// import Header from './components/Header';
-// import Footer from './components/Footer';
->>>>>>> main
 
 import PortfolioContainer from "./PortfolioContainer";
 const App = () => <PortfolioContainer />;
