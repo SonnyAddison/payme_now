@@ -15,7 +15,7 @@ const employeeSchema = new Schema({
         trim: true,
     },
     phone: {
-        type: String,
+        type: Number,
         required: false,
         unique: true,
         trim: true,
@@ -27,25 +27,25 @@ const employeeSchema = new Schema({
         match: [/.+@.+\..+/, 'Must match an email address!'],
     },
     federalTaxRate: {
-        type: int,
+        type: Number,
         required: true,
         unique: false,
         trim: true,
     },
     stateTaxRate: {
-        type: int,
+        type: Number,
         required: true,
         unique: false,
         trim: true,
     },
     hoursWorked: {
-        type: int,
+        type: Number,
         required: true,
         unique: false,
         trim: true,
     },
     payRate: {
-        type: int,
+        type: Number,
         required: true,
         unique: false,
         trim: true,
