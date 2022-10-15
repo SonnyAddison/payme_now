@@ -19,7 +19,7 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
     company: async (parent, { companyId }) => {
-      return Company.findOne({ _id: companyId });
+      return Company.findOne({ _id: companyId }).populate('employees');
     },
     companies: async () => {
       return Company.find();

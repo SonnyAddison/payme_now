@@ -20,7 +20,7 @@ const typeDefs = gql`
   type Employee {
     name: String
     address: String
-    phone: Int
+    phone: String
     email: String
     federalTaxRate: Int
     stateTaxRate: Int

@@ -15,7 +15,7 @@ const employeeSchema = new Schema({
         trim: true,
     },
     phone: {
-        type: Number,
+        type: String,
         required: false,
         unique: true,
         trim: true,
