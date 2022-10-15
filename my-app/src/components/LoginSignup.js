@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-
+// import Auth from '../utils/auth'
+// import { ADD_PROFILE } from '../utils/mutations';
+// import { useMutation } from '@apollo/client';
+// import { Link } from 'react-router-dom'
 import {
     MDBContainer,
     MDBTabs,
@@ -19,7 +22,45 @@ import {
 
 
 const LoginSignupComponent = () => {
- const [justifyActive, setJustifyActive] = useState('tab1');;
+  // const [signUpState, setSignUpState] = useState({
+  //   email: '',
+  //   password: '',
+  //   confirmPassword: '',
+  // });
+
+
+  // const [addUser, { error, data }] = useMutation(ADD_PROFILE);
+
+
+
+  // const handleFormSubmit = async (event) => {
+  //   event.preventDefault();
+  //   console.log(signUpState);
+  //   const { password, confirmPassword } = signUpState;
+  //   password !== confirmPassword ? alert('passwords dont match') : alert('thank you for signing up!')
+  //   try {
+  //     const { data } = await addUser({
+  //       variables: { ...signUpState },
+  //     });
+
+  //     Auth.login(data.addProfile.token);
+  //   } catch (e) {
+  //     console.error(e);
+  //   }
+  // };
+
+  
+
+  // const handleChange = (event) => {
+  //   const { name, value } = event.target;
+
+  //   setSignUpState({
+  //     ...signUpState,
+  //     [name]: value,
+  //   });
+  // };
+  
+ const [justifyActive, setJustifyActive] = useState('login');;
 
   const handleJustifyClick = (value) => {
     if (value === justifyActive) {
@@ -31,16 +72,17 @@ const LoginSignupComponent = () => {
 
     return ( 
         <div >
+          
         <MDBContainer id='loginSignup' className="p-3 my-5 d-flex flex-column w-50">
 
       <MDBTabs pills justify className='mb-3 d-flex flex-row justify-content-between'>
         <MDBTabsItem>
-          <MDBTabsLink id="formBtn" onClick={() => handleJustifyClick('tab1')} active={justifyActive === 'tab1'}>
+          <MDBTabsLink id="formBtn" onClick={() => handleJustifyClick('login')} active={justifyActive === 'login'}>
             Login
           </MDBTabsLink>
         </MDBTabsItem>
         <MDBTabsItem>
-          <MDBTabsLink id="formBtn" onClick={() => handleJustifyClick('tab2')} active={justifyActive === 'tab2'}>
+          <MDBTabsLink id="formBtn" onClick={() => handleJustifyClick('signUp')} active={justifyActive === 'signUp'}>
             Register
           </MDBTabsLink>
         </MDBTabsItem>
@@ -48,7 +90,7 @@ const LoginSignupComponent = () => {
 
       <MDBTabsContent>
 
-        <MDBTabsPane show={justifyActive === 'tab1'}>
+        <MDBTabsPane show={justifyActive === 'login'}>
 
   
 
@@ -66,29 +108,26 @@ const LoginSignupComponent = () => {
 
         </MDBTabsPane>
 
-        <MDBTabsPane show={justifyActive === 'tab2' } id="tab2" >
+        <MDBTabsPane  show={justifyActive === 'signUp' } id="signUp" >
 
      
 
-
-          
-
-          <MDBInput wrapperClass='mb-4' label='Name' id='form1' type='text'/>
-          <MDBInput wrapperClass='mb-4' label='Username' id='form1' type='text'/>
-          <MDBInput wrapperClass='mb-4' label='Email' id='form1' type='email'/>
-          <MDBInput wrapperClass='mb-4' label='Password' id='form1' type='password'/>
+          <MDBInput wrapperClass='mb-4' label='Email'   id='form1' type='email'/>
+          <MDBInput wrapperClass='mb-4' label='Password'  id='form1' type='password'/>
+          <MDBInput wrapperClass='mb-4' label='Confirm Password'   id='form1' type='password'/>
 
           <div className='d-flex justify-content-center mb-4'>
             <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I have read and agree to the terms' />
           </div>
 
-          <MDBBtn id="formBtn" className="mb-4 w-100">Sign up</MDBBtn>
+          <MDBBtn id="formBtn" type='submit' className="mb-4 w-100">Sign up</MDBBtn>
 
         </MDBTabsPane>
 
       </MDBTabsContent>
 
     </MDBContainer>
+   
     </div>
     
  );

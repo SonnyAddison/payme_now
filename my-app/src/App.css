@@ -111,7 +111,16 @@ span {
   top: 6%;
   padding-top: 3%;
 
+}
 
+#tablePromiseService p:hover {
+  color: #B9F2FF;
+  text-shadow: 0 0 10px rgb(191, 117, 206),
+               0 0 20px rgb(191, 117, 206),
+               0 0 40px rgb(191, 117, 206),
+               0 0 80px #fff,
+               0 0 120px #fff,
+               0 0 160px #fff;
 }
 
 th {

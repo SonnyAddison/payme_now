@@ -14,7 +14,7 @@ const Signup = () => {
   });
 
   
-  const [addProfile, { error, data }] = useMutation(ADD_PROFILE);
+  const [addUser, { error, data }] = useMutation(ADD_PROFILE);
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -33,7 +33,7 @@ const Signup = () => {
     const { password, confirmPassword } = formState;
     password !== confirmPassword ? alert('passwords dont match') : alert('thank you for signing up!')
     try {
-      const { data } = await addProfile({
+      const { data } = await addUser({
         variables: { ...formState },
       });
 
