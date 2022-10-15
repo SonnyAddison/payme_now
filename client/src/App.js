@@ -14,6 +14,13 @@ import Services from './Pages/Services'
 
 
 
+<<<<<<< HEAD
+=======
+import Home from './pages/Home';
+import Profile from './pages/Payroll';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
+>>>>>>> main
 
 
 
