@@ -11,7 +11,7 @@ const Privacyterms = () => {
 
     <div className="container">
       <ul className="privacy">
-      <div><p>Return to <a href="home">home</a> Meant to sign in? <a href="login">login here</a></p></div>
+      <div><p>Return to <a href="landing">home</a> Meant to sign in? <a href="login">login here</a></p></div>
       <h5>Who We Are</h5><div>We are a 4 person team who created this Project for a University of Arizona Full Stack Web Development Bootcamp.</div>Team Name: Binary Beasts<div>Team Members - Sonny - Naweek - Nabhand -Laura Sandura</div><div>Github: <a href="https://github.com/SonnyAddison/payme_now">link</a></div>
         <div>Heroku: <a href="https://payme-now.herokuapp.com/">link</a></div>
         <div></div>

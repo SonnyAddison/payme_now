@@ -108,17 +108,20 @@ span {
   height: 98%;
   top: 3%;
   padding-top: 3%;
-  }
+<<<<<<< HEAD
+  border: solid;
+  width: 50%;
+  height: 100%;
+  position: fixed;
+  right: 5%;
+  background-color: black;
+  overflow-y: scroll;
+  scrollbar-color: dark;
+  /* max-height: max-content;
+  max-width: max-content;
+  max-zoom: 200%;
+  min-zoom: 50%; */
 
-
-#tablePromiseService p:hover {
-  color: #B9F2FF;
-  text-shadow: 0 0 10px rgb(191, 117, 206),
-               0 0 20px rgb(191, 117, 206),
-               0 0 40px rgb(191, 117, 206),
-               0 0 80px #fff,
-               0 0 120px #fff,
-               0 0 160px #fff;
 }
 
 th {
