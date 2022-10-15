@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-// import Promisesimageslider from './components/Imageslider/Promisesimageslider';
+import Promisesslider from "../../components/Imagesliders/Promises/Promisesslider"
+// import Promisesimageslider from './components/Imageslider/Promisesslider';
 
 
 const OurPromise = () => {
@@ -22,7 +23,7 @@ return (
       <h3>OUR COMMITMENTS</h3>
       <h5>We want you to know we care, here is more about our commitments and guarantees.</h5>
       <div className = "promisesslideimages">
-        <div className = "imagecontainer">
+        <div className = "imagecontainer">< Promisesslider />
             {/* add slider */}
       </div>
       </div>

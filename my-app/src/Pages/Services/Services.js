@@ -75,7 +75,7 @@ const Services = () => {
         <h3>Sign up or log in <a href="login">here</a>.</h3>
         <h5>Check out our <a href="services">services page</a> to see what we have to offer.</h5>
         <h5>Visit our <a href="promise">promises page</a> to learn what makes us great.</h5>
-        <p>Return <a href="home">home</a></p>
+        <p>Return <a href="landing">home</a></p>
      </div>
      
      <div className="socialmedia">
