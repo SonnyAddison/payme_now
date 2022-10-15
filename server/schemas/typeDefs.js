@@ -20,12 +20,12 @@ const typeDefs = gql`
   type Employee {
     name: String
     address: String
-    phone: Number
+    phone: Int
     email: String
-    federalTaxRate: Number
-    stateTaxRate: Number
-    hoursWorked: Number
-    payRate: Number
+    federalTaxRate: Int
+    stateTaxRate: Int
+    hoursWorked: Int
+    payRate: Int
   }
 
   type Auth {
