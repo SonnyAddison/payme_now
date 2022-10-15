@@ -10,7 +10,7 @@ var  stateTax = {
     5: 5
 }
 
-taxRate = function(gross, per) { // Returns State Income Tax amount (Gross Income, taxPer)
+const taxRate = function(gross, per) { // Returns State Income Tax amount (Gross Income, taxPer)
     return ((gross/100)*stateTax[per])
 }
 

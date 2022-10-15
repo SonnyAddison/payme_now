@@ -1,0 +1,11 @@
+[
+    {
+        "name": "Brian Jr. Kernighans",
+        "address": "That one place",
+        "phone": 5204200000,
+        "federalTaxRate": 0,
+        "stateTaxRate": 5,
+        "hoursWorked": 17,
+        "payRate": 1
+    }
+]
