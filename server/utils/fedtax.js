@@ -1,4 +1,3 @@
-
 // Based on IRS Circular E - http://www.irs.gov/pub/irs-pdf/p15.pdf
 // Per the "Percentage Method"
 
@@ -26,7 +25,7 @@
         }
     },
     ba = 76.9, // 1 Allowance
-    c = function(m, a, g) { // Returns Federal Income Tax amount (Married, Allowances, Gross Income)
+     fedtax = function(m, a, g) { // Returns Federal Income Tax amount (Married, Allowances, Gross Income)
         g -= (ba*a); // Pay after allowances
         var b = Object.keys(w[(m==1) ? 'm' : 's']); //Married?
         for (var i = 0; i < b.length; i++) { // Find bracket
@@ -37,4 +36,6 @@
             }
         }
     }
+
+    module.exports = { fedtax }
 

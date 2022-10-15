@@ -19,8 +19,8 @@ generateHTML = (answers) => {
                     <h2>EARNINGS STATEMENT</h2> 
                 </div>
                 <div>
-                    <p><strong>Pay Period:</strong> 01/01/2021 - 01/15/2021</p>
-                    <p><strong>Pay Date:</strong> 01/20/2021</p>
+                    <p><strong>Pay Period:</strong> ${answers.pay.period}01/01/2021 - 01/15/2021</p>
+                    <p><strong>Pay Date:</strong>${answers.pay.date} 01/20/2021</p>
                 </div>
             </div>
         </div>
@@ -29,10 +29,10 @@ generateHTML = (answers) => {
                 <div class='d-flex justify-content-center'>
                     <h4>Employee Information</h4>
                 </div>
-                    <p>Employee Name: Sonny Addison</p>
-                    <p>Employee ID: 01</p>
-                    <p>Employee Address: Homeless </p>
-                    <p>Employee Phone: 801-347-1220</p>
+                    <p>Employee Name: ${answers.employee.name}Sonny Addison</p>
+                    <p>Employee ID: ${answers.employee.id}01</p>
+                    <p>Employee Address:${answers.employee.address} Homeless </p>
+                    <p>Employee Phone: ${answers.employee.phone}801-347-1220</p>
                 </div>
             </div>
         </div>
@@ -44,16 +44,16 @@ generateHTML = (answers) => {
                 <div class='container, justify-content-between'>
                     <div class='row'>
                         <div class='col'>
-                            <p>Hours Worked: 40</p>
-                            <p>Pay Rate: $15.00</p>
-                            <p>Gross Pay: $600.00</p>
-                            <p>Net Pay: $540.00</p>
+                            <p>Hours Worked: ${answers.hours.worked}40</p>
+                            <p>Pay Rate: ${answers.pay.rate}$15.00</p>
+                            <p>Gross Pay: ${gross.pay}$600.00</p>
+                            <p>Net Pay: ${answer.net.pay}$540.00</p>
                         </div>
                         <div class='col'>
-                            <p>Federal Tax: $60.00</p>
-                            <p>State Tax: $30.00</p>
-                            <p>Medicare: $10.00</p>
-                            <p>Social Security: $10.00</p>
+                            <p>Federal Tax: ${answers.fed.tax}$60.00</p>
+                            <p>State Tax: ${answers.state.tax}$30.00</p>
+                            <p>Medicare: ${answers.medicare.tax}$10.00</p>
+                            <p>Social Security: ${answers.social.security.tax} $10.00</p>
                         </div>
                 </div> 
             </div>  
@@ -98,12 +98,11 @@ generateHTML = (answers) => {
                         <h5 class="card-title">NET PAY</h5>
                         <p class="card-text">$540.00</p>    
                     </div>
-                </div>
+                </div> 
+            </div>
+        </div>
     
-            
-        
-    
-    <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous'></script>
+        <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous'></script>
     </body>
     </html>`
 }
