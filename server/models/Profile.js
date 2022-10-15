@@ -21,9 +21,8 @@ const profileSchema = new Schema({
   },
   company: [
     {
-      type: String,
-      required: true,
-      trim: true,
+      type: Schema.Types.ObjectId,
+      ref: 'Company',
     },
   ],
 });
