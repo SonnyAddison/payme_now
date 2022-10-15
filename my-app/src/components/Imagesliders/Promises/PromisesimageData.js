@@ -1,7 +1,7 @@
 const PromisesimageData = [
     
     {
-        images: '../../media/images/promise1.png',
+        images: '../../../media/images/promise1.png',
         alt: 'tobefilledin'
     },
     {

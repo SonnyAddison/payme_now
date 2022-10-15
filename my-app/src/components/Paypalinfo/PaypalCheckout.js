@@ -20,8 +20,10 @@
 //         <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
 //         <script> */}
 
-// Noted out for a moment -laura
-//      paypal code to for javascript.
+
+
+// Noted out for a moment -laura      paypal code to for javascript.
+
 
 //     function initPayPalButton() {
 //         var shipping = 0;

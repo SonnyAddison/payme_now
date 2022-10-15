@@ -113,6 +113,9 @@ span {
   height: 100%;
   position: fixed;
   right: 5%;
+  background-color: black;
+  overflow-y: scroll;
+  scrollbar-color: dark;
   /* max-height: max-content;
   max-width: max-content;
   max-zoom: 200%;

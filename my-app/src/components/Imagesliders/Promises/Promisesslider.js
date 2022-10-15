@@ -1,14 +1,14 @@
 import React from 'react';
-import {PromisesimageData} from 'react';
+import PromisesimageData from './PromisesimageData';
 
 const Promisesslider = () => {
     // return <PromisesimagesData />   
     return (
-        
+    <>
     {PromisesimageData.map((slide, index) => {
-        return (<img src={slide.image} alt={slide.alt}></img>) 
+        return (<img src={slide.images} alt={slide.alt}></img>) 
     })}
-    
+    </>
     );
 };
 
