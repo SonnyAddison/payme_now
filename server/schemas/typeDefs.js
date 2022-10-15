@@ -17,6 +17,37 @@ const typeDefs = gql`
     employees: [Employee]!
   }
 
+  type Employee {
+    name: String
+    address: String
+    phone: String
+    email: String
+    federalTaxRate: {
+        type: Number,
+        required: true,
+        unique: false,
+        trim: true,
+    },
+    stateTaxRate: {
+        type: Number,
+        required: true,
+        unique: false,
+        trim: true,
+    },
+    hoursWorked: {
+        type: Number,
+        required: true,
+        unique: false,
+        trim: true,
+    },
+    payRate: {
+        type: Number,
+        required: true,
+        unique: false,
+        trim: true,
+    },
+  }
+
   type Auth {
     token: ID!
     profile: Profile
