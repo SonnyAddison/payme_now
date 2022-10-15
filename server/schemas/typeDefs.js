@@ -17,6 +17,17 @@ const typeDefs = gql`
     employees: [Employee]!
   }
 
+  type Employee {
+    name: String
+    address: String
+    phone: Int
+    email: String
+    federalTaxRate: Int
+    stateTaxRate: Int
+    hoursWorked: Int
+    payRate: Int
+  }
+
   type Auth {
     token: ID!
     profile: Profile
