@@ -1,17 +1,17 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom'
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import SiteImage from './media/image.png';
-import OurPromise from './Pages/Promise/index.js';
+import OurPromise from './Pages/Promise/index';
 import './App.css';
 import Home  from './Pages/Home/index';
-import Payroll from './Pages/Payroll';
-import LoginSignup from './Pages/LoginSignup';
-import Landing from './Pages/Landing'
-import Services from './Pages/Services/Services.js';
-import Privacyterms from './components/Privacyterms/Privacyterms.js';
-import Support from './components/Supportfaqs/Support.js';
-import Logout from './components/Logout/Logout.js';
+import Payroll from './Pages/Payroll/index';
+import LoginSignup from './Pages/LoginSignup/index';
+import Landing from './Pages/Landing/index'
+import Services from './Pages/Services/index';
+import Privacyterms from './components/Privacyterms/Privacyterms';
+import Support from './components/Supportfaqs/Support';
+import Logout from './components/Logout/Logout';
 
 
 
