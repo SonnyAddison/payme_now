@@ -1,7 +1,7 @@
 {
   "name": "tech-friends",
   "version": "1.0.0",
-  "description": "",
+  "description": "![badmath](https://img.shields.io/bower/l/a)",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
@@ -19,5 +19,13 @@
   "dependencies": {
     "apollo-server": "^3.10.2",
     "graphql": "^16.6.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SonnyAddison/payme_now.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SonnyAddison/payme_now/issues"
+  },
+  "homepage": "https://github.com/SonnyAddison/payme_now#readme"
 }
