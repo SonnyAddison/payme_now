@@ -2,15 +2,15 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
   type Profile {
-    _id: ID
-    name: String
-    email: String
-    password: String
+    _id: ID!
+    name: String!
+    email: String!
+    password: String!
     company: [Company]!
   }
 
   type Company {
-    _id: ID
+    _id: ID!
     name: String
     address: String
     taxId: String
@@ -41,12 +41,17 @@ const typeDefs = gql`
     me: Profile
     companies: [Company]!
     company(companyId: ID!): Company
+    employee(employeeId: ID!): Employee
+    employees: [Employee]!
   }
 
   type Mutation {
     addProfile(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-   
+
+    removeEmployee(employeeId: ID!, name: String!): Employee
+    addEmployee(name: String!, address: String!, phone: String!, email: String!, federalTaxRate: Number, stateTaxRate: Number, payRate: Number ): Employee
+
     addCompany(profileId: ID!, company: ID!): Profile
     removeProfile: Profile
     removeCompany(company: ID!): Profile
