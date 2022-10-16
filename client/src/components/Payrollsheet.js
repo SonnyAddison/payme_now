@@ -1,5 +1,8 @@
+import { useQuery } from "@apollo/client";
 import React from "react";
+import { QUERY_ALLEMPLOYEES, QUERY_EMPLOYEE} from "../utils/queries";
 import EmployeeModal from "./EmployeeModals";
+
 
 
 
@@ -8,7 +11,8 @@ import EmployeeModal from "./EmployeeModals";
 
 const Payrollsheet = () => {
 
-//
+    const { loading, data } = useQuery(QUERY_ALLEMPLOYEES);
+    const employees = data?
 
 
 
