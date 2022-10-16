@@ -7,7 +7,7 @@ query myProfile {
     name
     email
     password
-    company: [Company]!
+    company
   }
 }
 `;
@@ -26,19 +26,19 @@ export const QUERY_ALLPROFILES = gql`
 `;
 
 export const QUERY_EMPLOYEE = gql`
-    query employee($employeeId: ID!) {query Employee {
-      employee {
-        _id
-        name
-        address
-        phone
-        email
-        federalTaxRate
-        stateTaxRate
-        hoursWorked
-        payRate
-      }
-    }
+    query Employee {
+  employee {
+    _id
+    name
+    address
+    phone
+    email
+    federalTaxRate
+    stateTaxRate
+    hoursWorked
+    payRate
+  }
+}
 `;
 
 export const QUERY_ALLEMPLOYEES = gql`
