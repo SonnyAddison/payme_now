@@ -7,7 +7,7 @@ query myProfile {
     name
     email
     password
-    company 
+    company
   }
 }
 `;
