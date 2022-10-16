@@ -1,35 +1,35 @@
 const PromisesimageData = [
     
     {
-        images: '../../../media/images/promise1.png',
+        images: '../../../media/images/promise1.jpg',
         alt: 'tobefilledin'
     },
     {
-        images: '../../media/images/promise2.png',
+        images: '../../media/images/promise2.jpg',
         alt: 'tobefilledin'
     },
     {
-        images: '../../media/images/promise3.png',
+        images: '../../media/images/promise3.jpg',
         alt: 'tobefilledin'
     },
     {
-        images: '../../media/images/promise4.png',
+        images: '../../media/images/promise4.jpg',
         alt: 'tobefilledin'
     },
     {
-        images: '../../media/images/promise5.png',
+        images: '../../media/images/promise5.jpg',
         alt: 'tobefilledin'
     },
     {
-        images: '../../media/images/promise6.png',
+        images: '../../media/images/promise6.jpg',
         alt: 'tobefilledin'
     },
     {
-        images: '../../media/images/promise7.png',
+        images: '../../media/images/promise7.jpg',
         alt: 'tobefilledin'
     },
     {
-        images: '../../media/images/promise8.png',
+        images: '../../media/images/promise8.jpg',
         alt: 'tobefilledin'
     },
     
