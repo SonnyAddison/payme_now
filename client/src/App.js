@@ -10,16 +10,9 @@ import LoginSignup from './Pages/LoginSignup';
 import Services from './Pages/Services'
 
 
-
-
-
-
-
-
-
-
 function App() {
-  return (
+
+
  
  
   <Container id="layout">

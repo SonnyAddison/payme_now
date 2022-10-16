@@ -21,7 +21,7 @@ const typeDefs = gql`
     _id: ID
     name: String
     address: String
-    phone: Int
+    phone: String
     email: String
     federalTaxRate: Int
     stateTaxRate: Int
