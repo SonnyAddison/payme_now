@@ -48,8 +48,10 @@ const typeDefs = gql`
   type Mutation {
     addProfile(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+
     removeEmployee(employeeId: ID!, name: String!): Employee
     addEmployee(name: String!, address: String!, phone: String!, email: String!, federalTaxRate: Number, stateTaxRate: Number, payRate: Number ): Employee
+
     addCompany(profileId: ID!, company: ID!): Profile
     removeProfile: Profile
     removeCompany(company: ID!): Profile
