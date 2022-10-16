@@ -26,7 +26,7 @@ export const QUERY_ALLPROFILES = gql`
 `;
 
 export const QUERY_EMPLOYEE = gql`
-  query Employee {
+  query Employee($employeeId: ID!) {
     employee(employeeId: $employeeId) {
       _id
       name
