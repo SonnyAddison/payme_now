@@ -46,7 +46,7 @@ const typeDefs = gql`
   type Mutation {
     addProfile(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addEmployee(employee: EmployeeInput!): Company
+   
     addCompany(profileId: ID!, company: ID!): Profile
     removeProfile: Profile
     removeCompany(company: ID!): Profile
