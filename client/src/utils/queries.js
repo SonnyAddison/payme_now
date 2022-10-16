@@ -26,19 +26,19 @@ export const QUERY_ALLPROFILES = gql`
 `;
 
 export const QUERY_EMPLOYEE = gql`
-    query Employee {
-  employee {
-    _id
-    name
-    address
-    phone
-    email
-    federalTaxRate
-    stateTaxRate
-    hoursWorked
-    payRate
-  }
-}
+    query employee($employeeId: ID!) {
+      employee {
+        _id
+        name
+        address
+        phone
+        email
+        federalTaxRate
+        stateTaxRate
+        hoursWorked
+        payRate
+      }
+    }
 `;
 
 export const QUERY_ALLEMPLOYEES = gql`
@@ -70,6 +70,7 @@ export const QUERY_COMPANIES = gql`
   }`;
 
 export const QUERY_COMPANY = gql`
+
   query Companies($companyId: ID!) {
     company(companyId: $companyId) {
       _id

@@ -22,7 +22,7 @@ function App() {
 
     < Home />
     <SiteImage/>
-      <BrowserRouter>
+      
 
         <Routes>
           
@@ -45,7 +45,7 @@ function App() {
 
         </Routes>      
 
-    </BrowserRouter>
+  
     
 </Container>
          
