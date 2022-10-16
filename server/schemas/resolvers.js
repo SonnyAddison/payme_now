@@ -9,7 +9,7 @@ const resolvers = {
     },
 
     profile: async (parent, { profileId }) => {
-      return Profile.findOne({ _id: profileId });
+      return Profile.findOne({ _id: profileId }).populate('company');
     },
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {
@@ -19,7 +19,7 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
     company: async (parent, { companyId }) => {
-      return Company.findOne({ _id: companyId });
+      return Company.findOne({ _id: companyId }).populate('employees');
     },
     companies: async () => {
       return Company.find();
