@@ -7,7 +7,7 @@ query myProfile {
     name
     email
     password
-    company: [Company]!
+    company 
   }
 }
 `;
@@ -26,7 +26,7 @@ export const QUERY_ALLPROFILES = gql`
 `;
 
 export const QUERY_EMPLOYEE = gql`
-    query employee($employeeId: ID!) {query Employee {
+    query employee($employeeId: ID!) {
       employee {
         _id
         name
@@ -70,6 +70,7 @@ export const QUERY_COMPANIES = gql`
   }`;
 
 export const QUERY_COMPANY = gql`
+
   query Companies($companyId: ID!) {
     company(companyId: $companyId) {
       _id
