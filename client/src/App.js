@@ -1,9 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom'
 import { Container, Row, Col } from 'react-bootstrap';
-
-
-import SiteImage from './components/media/image.png';
+import SiteImage from './media/image.png';
 import OurPromise from './Pages/Promise/index.js';
 import './App.css';
 import Home  from './Pages/Home/index';
