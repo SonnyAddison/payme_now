@@ -45,7 +45,7 @@ const typeDefs = gql`
     me: Profile
     companies: [Company]!
     company(companyId: ID!): Company
-    employee: Employee
+    employee(employeeId: ID!): Employee
     employees: [Employee]!
   }
   type Mutation {
