@@ -1,19 +1,17 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom'
-import { Container, Row, Col } from 'react-bootstrap';
-
-
-import SiteImage from './components/media/image.png';
-import OurPromise from './Pages/Promise/index.js';
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
+import { Container } from 'react-bootstrap';
+import SiteImage from './media/image.jpg';
+import OurPromise from './Pages/Promise/index';
 import './App.css';
 import Home  from './Pages/Home/index';
-import Payroll from './Pages/Payroll';
-import LoginSignup from './Pages/LoginSignup';
-import Landing from './Pages/Landing'
-import Services from './Pages/Services/Services.js';
-import Privacyterms from './components/Privacyterms/Privacyterms.js';
-import Support from './components/Supportfaqs/Support.js';
-import Logout from './components/Logout/Logout.js';
+import Payroll from './Pages/Payroll/index';
+import LoginSignup from './Pages/LoginSignup/index';
+import Landing from './Pages/Landing/index'
+import Services from './Pages/Services/index';
+import Privacyterms from './components/Privacyterms/Privacyterms';
+import Support from './components/Supportfaqs/Support';
+import Logout from './components/Logout/Logout';
 
 
 
@@ -22,31 +20,34 @@ function App() {
  
   <Container id="AppRoutes">
 
-       < Home />
+    < Home />
     <SiteImage/>
-      
-      <Routes>
-        
-        <Route path="/payrollsheet" element = {<Payroll />}/>
+      <BrowserRouter>
+
+        <Routes>
           
-        <Route path="/login" element= {<LoginSignup />}/>
+          <Route path="/payrollsheet" element = {<Payroll />}/>
+            
+          <Route path="/login" element= {<LoginSignup />}/>
+            
+          <Route path="/promise" element= {<OurPromise />}/>
+
+          <Route path="/services" element= {<Services />}/>
+
           
-        <Route path="/promise" element= {<OurPromise />}/>
+          <Route path="/landing" element= {<Landing />}/>
 
-        <Route path="/services" element= {<Services />}/>
+          <Route path="/logout" element= {<Logout />}/>
 
-        
-        <Route path="/landing" element= {<Landing />}/>
+          <Route path="/support" element= {<Support />}/>
 
-        <Route path="/logout" element= {<Logout />}/>
+          <Route path="/privacyterms" element= {<Privacyterms />}/>
 
-        <Route path="/support" element= {<Support />}/>
+        </Routes>      
 
-        <Route path="/privacyterms" element= {<Privacyterms />}/>
-
-      </Routes>      
+    </BrowserRouter>
     
-      </Container>
+</Container>
          
   );
 }

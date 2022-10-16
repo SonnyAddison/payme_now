@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { Profile, Company } = require('../models');
+const { Profile, Company, Employee } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -23,9 +23,12 @@ const resolvers = {
     },
     companies: async () => {
       return Company.find();
-    }
-  },
-
+    },
+    employee: async (parent, { employeeId }) => {
+     return Employee.findOne({ _id: employeeId }).populate('employees');
+    },
+  }, 
+  
   Mutation: {
     addProfile: async (parent, { name, email, password }) => {
       const profile = await Profile.create({ name, email, password });
@@ -68,6 +71,38 @@ const resolvers = {
       // If user attempts to execute this mutation and isn't logged in, throw an error
       throw new AuthenticationError('You need to be logged in!');
     },
+     // Add an employee to a company
+      addEmployee: async (parent, { companyId, employee }, context) => {
+        if (context.user) {
+          return Company.findOneAndUpdate(
+            { _id: companyId },
+            {
+              $addToSet: { employees: employee },
+            },
+            {
+              new: true,
+              runValidators: true,
+            }
+          );
+        }
+        throw new AuthenticationError('You need to be logged in!');
+      },
+       // Remove an employee from a company
+        removeEmployee: async (parent, { employeeId }, context) => {
+          if (context.user) {
+            return Company.findOneAndUpdate(
+              { _id: companyId },
+              {
+                $pull: { employees: employeeId },
+              },
+              {
+                new: true,
+              }
+            );
+          }
+          throw new AuthenticationError('You need to be logged in!');
+        },
+        
     // Set up mutation so a logged in user can only remove their profile and no one else's
     removeProfile: async (parent, args, context) => {
       if (context.user) {
