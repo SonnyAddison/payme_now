@@ -1,16 +1,13 @@
 import React from "react";
+import { useQuery } from "@apollo/client";
+import { QUERY_ALLEMPLOYEES, QUERY_EMPLOYEE} from "../utils/queries";
 import EmployeeModal from "./EmployeeModals";
-
-
-
 
 
 const Payrollsheet = () => {
 
-//
-
-
-
+    const { loading, data } = useQuery(QUERY_ALLEMPLOYEES);
+    const employees = data?
 
 
     // If there is no `profileId` in the URL as a parameter, execute the `QUERY_ME` query instead for the logged in user's information
@@ -114,19 +111,11 @@ const Payrollsheet = () => {
         perHour: 30
        }
     ]
-
-    
-    const styles = {
-      aboutStyle: {
-        background: '#000000',
-      },
-    };
-    
-  
-  
+ 
+ 
     return (
 
-    <nav style={styles.aboutStyle}> 
+
     <div  id="table">
     <h2>Payroll Sheet</h2>
     <EmployeeModal/>
@@ -152,13 +141,11 @@ const Payrollsheet = () => {
         ))}
         </tbody>
    </table>
-   
-
-      
-     
-      
+    
        </div>
+
         </nav>
+
  
     );
   };

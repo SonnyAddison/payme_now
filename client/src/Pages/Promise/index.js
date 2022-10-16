@@ -3,22 +3,13 @@ import { Container } from "react-bootstrap";
 import Promisesslider from "../../components/Imagesliders/Promises/Promisesslider"
 // import Promisesimageslider from './components/Imageslider/Promisesslider';
 
-
 const OurPromise = () => {
-    // const ourMessage = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque, qui facere iure exercitationem adipisci dolorem! Ex tempora voluptate, iusto ab amet explicabo pariatur minus, recusandae quos, deleniti esse? Repellat, sunt"
-
+    
 return (
 
     <Container id="tablePromise">
 
-        {/* Naweed original mockup example*/}
-        {/* <h2> Our Promise </h2>
-        <div>
-            <p> {ourMessage} </p>
-            <p> {ourMessage} </p>
-        </div> */}
-
-    <div className="promises">
+       <div className="promises">
 
       <h3>OUR COMMITMENTS</h3>
       <h5>We want you to know we care, here is more about our commitments and guarantees.</h5>

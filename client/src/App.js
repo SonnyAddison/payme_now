@@ -1,7 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom'
 import { Container, Row, Col } from 'react-bootstrap';
-// import { Link, animateScroll as scroll } from "react-scroll"; need for scrolling?
+
+
 import SiteImage from './components/media/image.png';
 import OurPromise from './Pages/Promise/index.js';
 import './App.css';
@@ -16,19 +17,11 @@ import Logout from './components/Logout/Logout.js';
 
 
 
-
-
-
-
-
-
-
-
 function App() {
-  return (
- 
+  return(
  
   <Container id="AppRoutes">
+
        < Home />
     <SiteImage/>
       
@@ -41,6 +34,7 @@ function App() {
         <Route path="/promise" element= {<OurPromise />}/>
 
         <Route path="/services" element= {<Services />}/>
+
         
         <Route path="/landing" element= {<Landing />}/>
 
@@ -50,11 +44,9 @@ function App() {
 
         <Route path="/privacyterms" element= {<Privacyterms />}/>
 
-      </Routes>
-      
+      </Routes>      
     
       </Container>
-
          
   );
 }
