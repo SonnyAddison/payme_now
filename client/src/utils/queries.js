@@ -69,6 +69,7 @@ export const QUERY_COMPANIES = gql`
 `;
 
 export const QUERY_COMPANY = gql`
+
   query Companies($companyId: ID!) {
     company(companyId: $companyId) {
       _id
