@@ -16,6 +16,7 @@ const typeDefs = gql`
     employees: [Employee]!
   }
   type Employee {
+    _id: ID
     name: String
     address: String
     phone: String
@@ -24,7 +25,15 @@ const typeDefs = gql`
     stateTaxRate: Int
     hoursWorked: Int
     payRate: Int
+    grossPay: Int
+    netPay: Int
+    federalTaxWithheld: Int
+    stateTaxWithheld: Int
+    socialSecurityTaxWithheld: Int
+    medicareTaxWithheld: Int
   }
+
+
   type Auth {
     token: ID!
     profile: Profile
@@ -36,13 +45,16 @@ const typeDefs = gql`
     me: Profile
     companies: [Company]!
     company(companyId: ID!): Company
+    employee: [Employee]!
   }
   type Mutation {
     addProfile(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addCompany(profileId: ID!, company: ID!): Profile
+    addEmployee(companyId: ID!, employee: ID!): Company
     removeProfile: Profile
     removeCompany(company: ID!): Profile
+    removeEmployee(employee: ID!): Company
   }
 `;
 
