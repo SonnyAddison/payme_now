@@ -50,20 +50,20 @@ const typeDefs = gql`
     addProfile(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth    
     addEmployee (
-                    name: String
-                    address: String
-                    phone: String
-                    email: String
-                    federalTaxRate: Int
-                    stateTaxRate: Int
-                    hoursWorked: Int
-                    payRate: Int
-                    grossPay: Int
-                    netPay: Int
-                    federalTaxWithheld: Int
-                    stateTaxWithheld: Int             
-                    socialSecurityTaxWithheld: Int
-                    medicareTaxWithheld: Int
+                    name: String,
+                    address: String,
+                    phone: String,
+                    email: String,
+                    federalTaxRate: Int,
+                    stateTaxRate: Int,
+                    hoursWorked: Int,
+                    payRate: Int,
+                    # grossPay: Int
+                    # netPay: Int
+                    # federalTaxWithheld: Int
+                    # stateTaxWithheld: Int             
+                    # socialSecurityTaxWithheld: Int
+                    # medicareTaxWithheld: Int
                     termination: String): Employee
     removeProfile: Profile   
     removeEmployee(employee: ID!): Profile
