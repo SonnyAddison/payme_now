@@ -50,6 +50,12 @@ const employeeSchema = new Schema({
         unique: false,
         trim: true,
     },
+    termination: {
+        type: String,
+        required: true,
+        unique: false,
+        trim: true,
+    }
 });
 
 const Employee = model('Employee', employeeSchema);

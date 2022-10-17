@@ -6,8 +6,9 @@ const typeDefs = gql`
     name: String
     email: String
     password: String
-    company
+    company: [Company]
   }
+
   type Company {
     _id: ID
     name: String
@@ -31,6 +32,7 @@ const typeDefs = gql`
     stateTaxWithheld: Int
     socialSecurityTaxWithheld: Int
     medicareTaxWithheld: Int
+    termination: String
   }
 
 

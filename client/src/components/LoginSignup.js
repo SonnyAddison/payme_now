@@ -16,49 +16,33 @@ import {
   }
   from 'mdb-react-ui-kit';
 
+
+
   
 
 
 
 
 const LoginSignupComponent = () => {
-  // const [signUpState, setSignUpState] = useState({
-  //   email: '',
-  //   password: '',
-  //   confirmPassword: '',
-  // });
+ 
+  // const [addProfile, { error }] = useMutation(ADD_PROFILE);
 
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    return console.log("PUTO")
 
-  // const [addUser, { error, data }] = useMutation(ADD_PROFILE);
+    // Since mutation function is async, wrap in a `try...catch` to catch any network errors from throwing due to a failed request.
+    // try {
+    //   // Execute mutation and pass in defined parameter data as variables
+    //   const { data } = await addProfile({
+    //     variables: { name },
+    //   });
 
-
-
-  // const handleFormSubmit = async (event) => {
-  //   event.preventDefault();
-  //   console.log(signUpState);
-  //   const { password, confirmPassword } = signUpState;
-  //   password !== confirmPassword ? alert('passwords dont match') : alert('thank you for signing up!')
-  //   try {
-  //     const { data } = await addUser({
-  //       variables: { ...signUpState },
-  //     });
-
-  //     Auth.login(data.addProfile.token);
-  //   } catch (e) {
-  //     console.error(e);
-  //   }
-  // };
-
-  
-
-  // const handleChange = (event) => {
-  //   const { name, value } = event.target;
-
-  //   setSignUpState({
-  //     ...signUpState,
-  //     [name]: value,
-  //   });
-  // };
+    //   window.location.reload();
+    // } catch (err) {
+    //   console.error(err);
+    // }
+  };
   
  const [justifyActive, setJustifyActive] = useState('login');;
 
@@ -77,12 +61,12 @@ const LoginSignupComponent = () => {
 
       <MDBTabs pills justify className='mb-3 d-flex flex-row justify-content-between'>
         <MDBTabsItem>
-          <MDBTabsLink id="formBtn" onClick={() => handleJustifyClick('login')} active={justifyActive === 'login'}>
+          <MDBTabsLink id="formBtn" onClick={() => handleJustifyClick('login')} active={justifyActive === 'signup'}>
             Login
           </MDBTabsLink>
         </MDBTabsItem>
         <MDBTabsItem>
-          <MDBTabsLink id="formBtn" onClick={() => handleJustifyClick('signUp')} active={justifyActive === 'signUp'}>
+          <MDBTabsLink id="formBtn" onClick={() => handleJustifyClick('signUp')} active={justifyActive === 'login'}>
             Register
           </MDBTabsLink>
         </MDBTabsItem>
@@ -120,7 +104,7 @@ const LoginSignupComponent = () => {
             <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I have read and agree to the terms' />
           </div>
 
-          <MDBBtn id="formBtn" type='submit' className="mb-4 w-100">Sign up</MDBBtn>
+          <MDBBtn id="formBtn" type='submit' onClick={handleFormSubmit} className="mb-4 w-100">Sign up</MDBBtn>
 
         </MDBTabsPane>
 
