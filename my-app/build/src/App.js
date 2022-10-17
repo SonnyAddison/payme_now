@@ -8,10 +8,7 @@ import  Home  from './Pages/Home'
 import Payroll from './Pages/Payroll'
 import LoginSignup from './Pages/LoginSignup';
 import Services from './Pages/Services'
-import Landing from './Pages/Landing';
-import Privacyterms from './components/PrivacyTerms';
-import FaqPage from './Pages/Faq';
-import LogoutPage from './Pages/LogoutPage';
+
 
 
 
@@ -38,16 +35,6 @@ function App() {
         <Route path="/promise" element= {<OurPromise />}/>
 
         <Route path="/services" element= {<Services />}/>
-
-        <Route path="/" element= {<Landing />}/>
-
-        <Route path='/privacyterms' element= {<Privacyterms/>}/>
-
-        <Route path='/faq' element= {<FaqPage/>}/>
-
-        <Route path='/logout' element= {<LogoutPage/>}/>
-        
-
           
       </Routes>
       

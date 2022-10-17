@@ -9,28 +9,6 @@ height: 100vh;
   
 }
 
-
-/* removed #tablePromiseService - gave each page their own id */
-/* #tableLanding, #tableService, #tablePromise, #tableLogout, #tablePrivacy, #tableSupport {
-  
-  color: rgb(43, 8, 8);
-  position:fixed;
-  height: 98%;
-  top: 3%;
-  padding-top: 3%;
-  border: solid;
-  width: 50%;
-  height: 100%;
-  position: fixed;
-  right: 1%;
-  background-color: black;
-  overflow-y: scroll;
-  scrollbar-color: black;
-
-
-} */
-
-
 #layout {
   display: flex;
   flex-direction: row;
@@ -64,19 +42,9 @@ height: 100vh;
 }
 
 #linkColor {
-  color: #B9F2FF;
+  color: rgb(254, 245, 252);
   
 
-}
-
-#linkColor:hover {
-  color: #B9F2FF;
-  text-shadow: 0 0 10px rgb(191, 117, 206),
-               0 0 20px rgb(191, 117, 206),
-               0 0 40px rgb(191, 117, 206),
-               0 0 80px #fff,
-               0 0 120px #fff,
-               0 0 160px #fff;
 }
 
 #formBtn {
@@ -92,7 +60,7 @@ height: 100vh;
   color: rgb(255, 255, 255);
 } */
 
-h5 {
+h2 {
   text-align: center;
   color: rgb(243, 72, 243);
   width: 100%;
@@ -135,15 +103,13 @@ span {
 #tablePromiseService {
  
   background-color: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
+  color: rgb(43, 8, 8);
   width: 60%;
   position: absolute;
   right: 0%;
   height: 94%;
   top: 6%;
   padding-top: 3%;
-  overflow-y: scroll;
-  scrollbar-color: black;
 
 }
 

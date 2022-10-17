@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import PromiseComp from "../../components/Promise";
 
 
 
@@ -9,7 +8,14 @@ const OurPromise = () => {
 
 return (
 
-  <PromiseComp/>
+    <Container id="tablePromiseService">
+    
+        <h2> Our Promise </h2>
+        <div>
+            <p> {ourMessage} </p>
+            <p> {ourMessage} </p>
+        </div>
+    </Container>
 );
 };
 

@@ -7,13 +7,13 @@ const Landing = () => {
 
     return (
 
-    <Container id="tableLanding">
+    <Container id="tablePromiseService">
 
-    <div className="landing">
+    <div >
       <h3>Thank you for checking out Payme Now!</h3>
       <h5>We pride ourselves for being:</h5>
       <ul><p>Simple and Affordable...</p></ul>
-      <ul><ul>...while saving you time and money</ul></ul>
+      <ul><ul><p>...while saving you time and money</p></ul></ul>
       <ul><ul><p>...with our Intuitive One Stop Design!</p></ul></ul>
         <h3>Sign up or log in <a href="login">here</a>.</h3>
         <h5>Check out our <a href="services">services page</a> to see what we have to offer.</h5>

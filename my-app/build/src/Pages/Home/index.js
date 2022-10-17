@@ -22,7 +22,7 @@ const Home = () => {
               <NavDropdown.Item href="/payrollsheet">Payroll Page</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Payroll History
               </NavDropdown.Item>
-              <NavDropdown.Item href="/faq">FAQ</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/login">
                 Log In or Sign up

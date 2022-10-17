@@ -6,7 +6,7 @@ const Image = () => {
 
 
     return (
-        <a href="/"> <img id="siteImage"  src={image} alt='site pic'/></a>
+        <img id="siteImage" src={image} alt='site pic'/>
     )
 }
 
