@@ -58,7 +58,8 @@ const resolvers = {
 
 
     // Add an employee to a profile
-    addEmployee:  ({ name,
+    addEmployee: async (parent, { 
+                                  name,
                                   address,
                                   phone,
                                   email,
@@ -66,17 +67,17 @@ const resolvers = {
                                   stateTaxRate,
                                   hoursWorked,
                                   payRate,
-                                  grossPay,
-                                  netPay,
-                                  federalTaxWithheld,
-                                  stateTaxWithheld,           
-                                  socialSecurityTaxWithheld,
-                                  medicareTaxWithheld,
+                                  // grossPay,
+                                  // netPay,
+                                  // federalTaxWithheld,
+                                  // stateTaxWithheld,           
+                                  // socialSecurityTaxWithheld,
+                                  // medicareTaxWithheld,
                                   termination, 
                                 }
                                 ) => {
       
-        const newEmployee = Employee.create({name,
+        const newEmployee = await Employee.create({name,
           address,
           phone,
           email,
@@ -84,12 +85,12 @@ const resolvers = {
           stateTaxRate,
           hoursWorked,
           payRate,
-          grossPay,
-          netPay,
-          federalTaxWithheld,
-          stateTaxWithheld,           
-          socialSecurityTaxWithheld,
-          medicareTaxWithheld,
+          // grossPay,
+          // netPay,
+          // federalTaxWithheld,
+          // stateTaxWithheld,           
+          // socialSecurityTaxWithheld,
+          // medicareTaxWithheld,
           termination});
 
           return newEmployee;

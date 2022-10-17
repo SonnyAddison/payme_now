@@ -12,12 +12,12 @@ mutation AddEmployee($name: String, $address: String, $phone: String, $email: St
     stateTaxRate
     hoursWorked
     payRate
-    grossPay
-    netPay
-    federalTaxWithheld
-    stateTaxWithheld
-    socialSecurityTaxWithheld
-    medicareTaxWithheld
+    # grossPay
+    # netPay
+    # federalTaxWithheld
+    # stateTaxWithheld
+    # socialSecurityTaxWithheld
+    # medicareTaxWithheld
     termination
   }
 }
