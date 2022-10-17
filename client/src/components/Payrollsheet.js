@@ -1,19 +1,20 @@
 import React from "react";
-import { useQuery } from "@apollo/client";
-import { QUERY_ALLEMPLOYEES, QUERY_EMPLOYEE} from "../utils/queries";
 import EmployeeModal from "./EmployeeModals";
+
+
+
+
 
 
 const Payrollsheet = () => {
 
-    const { loading, data } = useQuery(QUERY_ALLEMPLOYEES);
-    const employees = data?.employees || [];
-    
+//
+
+
 
 
     // If there is no `profileId` in the URL as a parameter, execute the `QUERY_ME` query instead for the logged in user's information
     // const employeeData  = [useQuery(QUERY_EMPLOYEES)];
-   
     const employeeId = () => { return Math.floor(Math.random() * 10000)}
     const employeeData = [
        {
@@ -113,11 +114,13 @@ const Payrollsheet = () => {
         perHour: 30
        }
     ]
- 
- 
+
+    
+  
+  
     return (
 
-
+      
     <div  id="table">
     <h2>Payroll Sheet</h2>
     <EmployeeModal/>
@@ -143,8 +146,14 @@ const Payrollsheet = () => {
         ))}
         </tbody>
    </table>
-    
+   
+
+      
+     
+      
        </div>
+
+ 
     );
   };
   

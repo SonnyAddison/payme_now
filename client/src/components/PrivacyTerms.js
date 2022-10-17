@@ -197,4 +197,3 @@ const Privacyterms = () => {
 
 
 export default Privacyterms;
-
