@@ -8,7 +8,7 @@ const Logout = () => {
 
     return (
 
-    <Container id="tableLogout">
+    <Container id="tablePromiseService">
       <h3>Thanks for choosing Payme now</h3>
       <h5>We look forward to continuing to help you with your business needs.</h5>
        <h3>Don't forget to follow us on Social Media</h3>

@@ -1,12 +1,16 @@
 import React from "react";
 import Payrollsheet from "../../components/Payrollsheet";
 
-const PayrollPage = () => {
+
+
+
+const PayrollPage =  () => {
 
 
     return (
        
-        < Payrollsheet/>
+        < Payrollsheet
+        />
     )
 }
 

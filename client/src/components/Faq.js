@@ -8,9 +8,9 @@ const Support = () => {
 
     return (
 
-    <Container id="tableSupport">
+    <Container id="tablePromiseService">
 
-    <div className="support">
+    <div >
         <h3>SUPPORT QUESTIONS</h3>
         <h5>Need Help? See our FAQ's below for answers</h5>
         <ul>

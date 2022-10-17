@@ -16,17 +16,14 @@ import { Container } from "react-bootstrap";
 // import Testimonial7 from '../../media/images/testimonial7.png';
 
 
+
 const Services = () => {
 
-    // const theparagraph = "a paragraph example just as a paragraph example"
-    // const theunorderedlist = "the ul un ordered list example "
-    // const ourMessage = "the paragraph in a ul example"
+
 
     return (
 
-      
-
-    <Container id="tableService">
+        <Container id="tablePromiseService">
 
       <div className="services"></div>
         <h3>WHAT WE OFFER</h3>
@@ -57,7 +54,6 @@ const Services = () => {
       <h5>WHAT MAKES PAYME NOW BETTER?</h5>
       <ul><p>One big thing that small business owners miss out on is realizing that their time valuable. Time is money. Our services are designed to save you your time which is money to pay your employees.</p></ul>
      <h5>GETTING STARTED IS EASY</h5>
-     <h3>Sign up or log in <a href="login">here</a>.</h3> 
       <div className = "signupslideimages">
         <div className = "imagecontainer">
                         {/* add slides */}
@@ -70,24 +66,7 @@ const Services = () => {
                         {/* add slides */}
         </div> 
       </div>
-    <div className="sitelinks">
-      <h3>Thank you for checking out Payme Now!</h3>
-        <h3>Sign up or log in <a href="login">here</a>.</h3>
-        <h5>Check out our <a href="services">services page</a> to see what we have to offer.</h5>
-        <h5>Visit our <a href="promise">promises page</a> to learn what makes us great.</h5>
-        <p>Return <a href="landing">home</a></p>
-     </div>
      
-     <div className="socialmedia">
-     <h3>Follow us on Social Media</h3>
-        {/* Visit us on social media! Need to add icons*/}
-        <div className="socialmedia">
-        <ul><a href="https://www.facebook.com">Facebook</a></ul>
-        <ul><a href="https://www.youtube.com">YouTube</a></ul>
-        <ul><a href="https://www.twitter.com">Twitter</a></ul>
-        <ul><a href="https://www.instagram.com">Instagram</a></ul>
-        </div>
-        </div>
 
         <div className="ending">
         <p>2022 @ All Rights Reserved</p>
@@ -95,9 +74,7 @@ const Services = () => {
         </div>
 
     </Container>
-    
     )
 }
 
 export default Services;
-
