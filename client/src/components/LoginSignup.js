@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-// import Auth from '../utils/auth'
-// import { ADD_PROFILE } from '../utils/mutations';
-// import { useMutation } from '@apollo/client';
-// import { Link } from 'react-router-dom'
+import Auth from '../utils/auth'
+import { ADD_PROFILE } from '../utils/mutations';
+import { useMutation } from '@apollo/client';
+import { Link } from 'react-router-dom'
 import {
     MDBContainer,
     MDBTabs,
@@ -22,43 +22,43 @@ import {
 
 
 const LoginSignupComponent = () => {
-  // const [signUpState, setSignUpState] = useState({
-  //   email: '',
-  //   password: '',
-  //   confirmPassword: '',
-  // });
+  const [signUpState, setSignUpState] = useState({
+    email: '',
+    password: '',
+    confirmPassword: '',
+  });
 
 
-  // const [addUser, { error, data }] = useMutation(ADD_PROFILE);
+  const [addUser, { error, data }] = useMutation(ADD_PROFILE);
 
 
 
-  // const handleFormSubmit = async (event) => {
-  //   event.preventDefault();
-  //   console.log(signUpState);
-  //   const { password, confirmPassword } = signUpState;
-  //   password !== confirmPassword ? alert('passwords dont match') : alert('thank you for signing up!')
-  //   try {
-  //     const { data } = await addUser({
-  //       variables: { ...signUpState },
-  //     });
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(signUpState);
+    const { password, confirmPassword } = signUpState;
+    password !== confirmPassword ? alert('passwords dont match') : alert('thank you for signing up!')
+    try {
+      const { data } = await addUser({
+        variables: { ...signUpState },
+      });
 
-  //     Auth.login(data.addProfile.token);
-  //   } catch (e) {
-  //     console.error(e);
-  //   }
-  // };
+      Auth.login(data.addProfile.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   
 
-  // const handleChange = (event) => {
-  //   const { name, value } = event.target;
+  const handleChange = (event) => {
+    const { name, value } = event.target;
 
-  //   setSignUpState({
-  //     ...signUpState,
-  //     [name]: value,
-  //   });
-  // };
+    setSignUpState({
+      ...signUpState,
+      [name]: value,
+    });
+  };
   
  const [justifyActive, setJustifyActive] = useState('login');;
 
