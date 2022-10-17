@@ -16,54 +16,40 @@ const AddEmployeeModal = () => {
     const handleDelClose = () => setshowDel(false);
     const handleDelShow = () => setshowDel(true);
 
-    
+    const [allValues, setAllValues] = useState({
+      address: '',
+      phone: '',
+      email: '',
+      fedTax: '',
+      status: '',
+      hourlyPay:'',
+      stateTax: ''
+
+   });
 
 
-const [ fullName, setFullName] = useState('');
-const [ address, setAddress ] = useState('')
-const [ phone, setPhone] = useState('')
-const [ email, setEmail ] = useState('')
-const [ fedTax, setFedTax ] = useState('')
-const [ status, setStatus] = useState('')
-const [ hourlyPay, setHourlyPay ] = useState('')
-const [ stateTax, setStateTax ] = useState('')
+   const [addEmployee, {error}] = useMutation(ADD_EMPLOYEE)
 
+   const changeHandler = e => {
+    setAllValues(allValues => {
+      
+      return {...allValues, [e.target.name]: e.target.value}
+    })
+   }
 
-
-  
-    // // Use React Router's `<Navigate />` component to redirect to personal profile page if username is yours
-    // if (!Auth.loggedIn()) {
-    //   return <Navigate to="/home" />;
-    // }
- 
-    const handleInputChange = (e) => {
-      const {id , value} = e.target;
-      if(id === "fullName"){
-          setFullName(value);
-      }
-      if(id === "address"){
-          setAddress(value);
-      }
-      if(id === "phone"){
-          setPhone(value);
-      }
-      if(id === "state"){
-          setFedTax(value);
-      }
-      if(id === "zip"){
-          setEmail(value);
-      }
-      if(id === "payRate") {
-          setHourlyPay(value)
-      }
-      if(id === "married" || "single" || "headOfHouse") {
-        setStatus(value)
-      }
-      if(id === "stateTax") {
-        setStateTax(value)
-      }
+   const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await addEmployee({
+        ...allValues
+      })
+     console.log(data)
+    }catch (err) {
+      console.error(err)
     }
-
+      
+   }
+   
 
 
 
@@ -74,12 +60,12 @@ const [ stateTax, setStateTax ] = useState('')
             <Modal.Title>Delete an Employee</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <form className="modalBody">
-              <label for="employeeId">Employee Name:</label>
+            <form onSubmit={handleFormSubmit} className="modalBody">
+              <label >Employee Name:</label>
               <input type="text" id="employeeId" name="Id" ></input>
-              <label for="employeeId">Employee ID:</label>
+              <label >Employee ID:</label>
               <input type="text" id="employeeId" name="Id" ></input>
-              <label for="freeform">Reason <span>(required)</span>:</label>
+              <label >Reason <span>(required)</span>:</label>
               <textarea id="freeform" name="freeform" rows="4" cols="50">
 Enter text here...
 </textarea>
@@ -100,38 +86,38 @@ Enter text here...
       </Modal.Header>
       <Modal.Body>
        
-        <form className="modalBody">
+        <form onSubmit={handleFormSubmit} className="modalBody">
            
-  <label for="fullName">Full Name:</label>
-  <input type="text" id="fullName" name="name" value={fullName} onChange = {(e) => handleInputChange(e)}/>
-  <label for="address">Address:</label>
-  <input type="text" id="address" name="address" value={address} onChange = {(e) => handleInputChange(e)}/>
-  <label for="phone">Phone:</label>
-  <input type="text" id="phone" name="phone" value={phone} onChange = {(e) => handleInputChange(e)}/>
-  <label for="email">Email:</label>
-  <input type="text" id="email" name="email" value={email} onChange = {(e) => handleInputChange(e)}/>
-  <label for="zip">Federal Tax Rate:</label>
-  <input type="text" id="federalTaxRate" name="federalTaxRate" value={fedTax} onChange = {(e) => handleInputChange(e)}/>
-  <label for="payRate">Pay Rate:</label>
-  <input type="text" id="hourlyPay" name="hourlyPay" placeholder="$" value={hourlyPay} onChange = {(e) => handleInputChange(e)}/>
-  <label for="maritalstatus">Marital Status:</label>
+  <label >Full Name:</label>
+  <input type="text" id="fullName" name="name"  onChange= {changeHandler} />
+  <label >Address:</label>
+  <input type="text" id="address" name="address"  onChange= {changeHandler} />
+  <label >Phone:</label>
+  <input type="text" id="phone" name="phone"  onChange= {changeHandler} />
+  <label >Email:</label>
+  <input type="text" id="email" name="email"  onChange= {changeHandler} />
+  <label >Federal Tax Rate:</label>
+  <input type="text" id="federalTaxRate" name="federalTaxRate"  onChange= {changeHandler} />
+  <label >Pay Rate:</label>
+  <input type="text" id="hourlyPay" name="hourlyPay" placeholder="$" onChange= {changeHandler} />
+  <label >Marital Status:</label>
        <div className="radioBtns">
       <input type="radio" id="married"
-       name="maritalStatus" value={status} onChange = {(e) => handleInputChange(e)}/>
-      <label for="married">Married</label>
+       name="maritalStatus"  onChange= {changeHandler} />
+      <label >Married</label>
 
       <input type="radio" id="single"
-       name="maritalStatus" value={status} onChange = {(e) => handleInputChange(e)}/>
-      <label for="single">Single</label>
+       name="maritalStatus"  onChange= {changeHandler} />
+      <label >Single</label>
 
       <input type="radio" id="headOfHouse"
-       name="maritalStatus" value={status} onChange = {(e) => handleInputChange(e)}/>
-      <label for="headOfHouse">Head of Household</label>
+       name="maritalStatus" onChange= {changeHandler} />
+      <label>Head of Household</label>
      </div>
     
 
-  <label for="state-tax">State Tax Rate:</label>
-  <select id="stateTax" name="stateTax" value={stateTax} onChange = {(e) => handleInputChange(e)}>
+  <label >State Tax Rate:</label>
+  <select id="stateTax" name="stateTax" onChange= {changeHandler} >
     <option>Select a Rate</option>
     <option>Exempt</option>
     <option>0.8%</option>
