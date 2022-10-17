@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom'
-import { Container, Row, Col } from 'react-bootstrap';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { Container } from 'react-bootstrap';
 import SiteImage from './components/SiteImage'
 import OurPromise from './Pages/Promise';
 import './App.css'
@@ -15,7 +16,10 @@ import LogoutPage from './Pages/LogoutPage';
 
 
 
-
+const client = new ApolloClient({
+  uri: 'http://localhost:3001/graphql',
+  cache: new InMemoryCache(),
+});
 
 
 
@@ -24,7 +28,7 @@ import LogoutPage from './Pages/LogoutPage';
 function App() {
   return (
  
- 
+ <ApolloProvider client={client}>
   <Container id="layout">
        < Home />
     <SiteImage/>
@@ -54,7 +58,7 @@ function App() {
     
       </Container>
 
-         
+     </ApolloProvider>
   );
 }
 

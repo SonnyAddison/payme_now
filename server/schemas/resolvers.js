@@ -27,8 +27,8 @@ const resolvers = {
     employee: async (parent, { employeeId }) => {
       return Employee.findOne({ _id: employeeId });
     },
-    employees: async (parent,) => {
-      return Employee.find();
+    employees: async () => {
+      return Employee.find({})
     },
   },
 
@@ -56,40 +56,46 @@ const resolvers = {
       return { token, profile };
     },
 
-    // Add a third argument to the resolver to access data in our `context`
-    // addCompany: async (parent, { profileId, company }, context) => {
-    //   // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
-    //   if (context.user) {
-    //     return Profile.findOneAndUpdate(
-    //       { _id: profileId },
-    //       {
-    //         $addToSet: { company: company },
-    //       },
-    //       {
-    //         new: true,
-    //         runValidators: true,
-    //       }
-    //     );
-    //   }
-    //   // If user attempts to execute this mutation and isn't logged in, throw an error
-    //   throw new AuthenticationError('You need to be logged in!');
-    // },
+
     // Add an employee to a profile
-    addEmployee: async (parent, { profileId, employee }, context) => {
-      if (context.user) {
-        return Profile.findOneAndUpdate(
-          { _id: profileId },
-          {
-            $addToSet: { employee: employee },
-          },
-          {
-            new: true,
-            runValidators: true,
-          }
-        );
-      }
-      throw new AuthenticationError('You need to be logged in!');
-    },
+    addEmployee:  ({ name,
+                                  address,
+                                  phone,
+                                  email,
+                                  federalTaxRate,
+                                  stateTaxRate,
+                                  hoursWorked,
+                                  payRate,
+                                  grossPay,
+                                  netPay,
+                                  federalTaxWithheld,
+                                  stateTaxWithheld,           
+                                  socialSecurityTaxWithheld,
+                                  medicareTaxWithheld,
+                                  termination, 
+                                }
+                                ) => {
+      
+        const newEmployee = Employee.create({name,
+          address,
+          phone,
+          email,
+          federalTaxRate,
+          stateTaxRate,
+          hoursWorked,
+          payRate,
+          grossPay,
+          netPay,
+          federalTaxWithheld,
+          stateTaxWithheld,           
+          socialSecurityTaxWithheld,
+          medicareTaxWithheld,
+          termination});
+
+          return newEmployee;
+      },
+      
+   
     // Remove an employee from a profile
     removeEmployee: async (parent, { employeeId }, context) => {
       if (context.user) {
