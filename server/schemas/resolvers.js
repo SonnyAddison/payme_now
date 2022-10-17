@@ -27,8 +27,8 @@ const resolvers = {
     employee: async (parent, { employeeId }) => {
       return Employee.findOne({ _id: employeeId });
     },
-    allEmployees: async (parent) => {
-      return Employee.find();
+    employees: async () => {
+      return Employee.find({})
     },
   },
 
@@ -58,7 +58,7 @@ const resolvers = {
 
 
     // Add an employee to a profile
-    addEmployee: async (parent, { name,
+    addEmployee:  ({ name,
                                   address,
                                   phone,
                                   email,
@@ -74,9 +74,9 @@ const resolvers = {
                                   medicareTaxWithheld,
                                   termination, 
                                 }
-                                , context) => {
+                                ) => {
       
-        const newEmployee = await Employee.create({name,
+        const newEmployee = Employee.create({name,
           address,
           phone,
           email,

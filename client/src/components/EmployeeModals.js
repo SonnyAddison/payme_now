@@ -1,5 +1,8 @@
+
 import React, { useState }from "react";
 import { Button, Modal } from 'react-bootstrap';
+import { ADD_EMPLOYEE} from "../utils/mutations";
+import { useMutation } from "@apollo/client";
 
 
 const AddEmployeeModal = () => {
@@ -18,31 +21,21 @@ const AddEmployeeModal = () => {
 
 const [ fullName, setFullName] = useState('');
 const [ address, setAddress ] = useState('')
-const [ city, setCity ] = useState('')
-const [ state, setState ] = useState('')
-const [ zip, setZip ] = useState('')
+const [ phone, setPhone] = useState('')
+const [ email, setEmail ] = useState('')
+const [ fedTax, setFedTax ] = useState('')
 const [ status, setStatus] = useState('')
 const [ hourlyPay, setHourlyPay ] = useState('')
 const [ stateTax, setStateTax ] = useState('')
 
 
-  
-  
+
   
     // // Use React Router's `<Navigate />` component to redirect to personal profile page if username is yours
     // if (!Auth.loggedIn()) {
     //   return <Navigate to="/home" />;
     // }
-    const handleFormSubmit = (e) => {
-        e.preventDefault();
-        if(e.target.value === "delete"){
-          alert("Employee D")
-          handleDelClose();
-        } else {
-          handleClose();
-        }
-    }
-
+ 
     const handleInputChange = (e) => {
       const {id , value} = e.target;
       if(id === "fullName"){
@@ -51,14 +44,14 @@ const [ stateTax, setStateTax ] = useState('')
       if(id === "address"){
           setAddress(value);
       }
-      if(id === "city"){
-          setCity(value);
+      if(id === "phone"){
+          setPhone(value);
       }
       if(id === "state"){
-          setState(value);
+          setFedTax(value);
       }
       if(id === "zip"){
-          setZip(value);
+          setEmail(value);
       }
       if(id === "payRate") {
           setHourlyPay(value)
@@ -70,6 +63,9 @@ const [ stateTax, setStateTax ] = useState('')
         setStateTax(value)
       }
     }
+
+
+
 
     return (
       <>
@@ -93,7 +89,7 @@ Enter text here...
         <Button variant="secondary" onClick={handleDelClose}>
           Close
         </Button>
-        <Button variant="primary" value="delete" onClick={handleFormSubmit}>
+        <Button variant="primary" value="delete" onClick={handleDelClose} >
           Save Changes
         </Button>
       </Modal.Footer>
@@ -110,12 +106,12 @@ Enter text here...
   <input type="text" id="fullName" name="name" value={fullName} onChange = {(e) => handleInputChange(e)}/>
   <label for="address">Address:</label>
   <input type="text" id="address" name="address" value={address} onChange = {(e) => handleInputChange(e)}/>
-  <label for="city">City:</label>
-  <input type="text" id="city" name="city" value={city} onChange = {(e) => handleInputChange(e)}/>
-  <label for="state">State:</label>
-  <input type="text" id="state" name="state" value={state} onChange = {(e) => handleInputChange(e)}/>
-  <label for="zip">Zip:</label>
-  <input type="text" id="zip" name="zip" value={zip} onChange = {(e) => handleInputChange(e)}/>
+  <label for="phone">Phone:</label>
+  <input type="text" id="phone" name="phone" value={phone} onChange = {(e) => handleInputChange(e)}/>
+  <label for="email">Email:</label>
+  <input type="text" id="email" name="email" value={email} onChange = {(e) => handleInputChange(e)}/>
+  <label for="zip">Federal Tax Rate:</label>
+  <input type="text" id="federalTaxRate" name="federalTaxRate" value={fedTax} onChange = {(e) => handleInputChange(e)}/>
   <label for="payRate">Pay Rate:</label>
   <input type="text" id="hourlyPay" name="hourlyPay" placeholder="$" value={hourlyPay} onChange = {(e) => handleInputChange(e)}/>
   <label for="maritalstatus">Marital Status:</label>
@@ -155,7 +151,7 @@ Enter text here...
         <Button variant="secondary" onClick={handleClose}>
           Close
         </Button>
-        <Button variant="primary" onClick={handleFormSubmit}>
+        <Button variant="primary" onClick={handleClose}>
           Save Changes
         </Button>
       </Modal.Footer>

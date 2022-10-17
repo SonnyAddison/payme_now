@@ -7,5 +7,42 @@
         "stateTaxRate": 5,
         "hoursWorked": 17,
         "payRate": 1
+    },
+    {
+        "name": "Brian Jr. Kernighans",
+        "address": "That one place",
+        "phone": 5204200000,
+        "federalTaxRate": 0,
+        "stateTaxRate": 5,
+        "hoursWorked": 17,
+        "payRate": 1
+    },
+    {
+        "name": "Brian Jr. Kernighans",
+        "address": "That one place",
+        "phone": 5204200000,
+        "federalTaxRate": 0,
+        "stateTaxRate": 5,
+        "hoursWorked": 17,
+        "payRate": 1
+    },
+    {
+        "name": "Brian Jr. Kernighans",
+        "address": "That one place",
+        "phone": 5203557377,
+        "federalTaxRate": 0,
+        "stateTaxRate": 5,
+        "hoursWorked": 70,
+        "payRate": 40
+    },
+    {
+        "name": "Johnny Tsunami",
+        "address": "4242 Wilshire",
+        "phone": 6025987895,
+        "federalTaxRate": 0,
+        "stateTaxRate": 6,
+        "hoursWorked": 40,
+        "payRate": 50
     }
+
 ]

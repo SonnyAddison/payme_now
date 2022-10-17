@@ -1,23 +1,20 @@
 import React from "react";
 import EmployeeModal from "./EmployeeModals";
 import { useQuery } from "@apollo/client";
-import {QUERY_EMPLOYEE_PAYROLLPAGE} from "../utils/queries"
+import {QUERY_EMPLOYEE_PAYROLLPAGE} from "../utils/queries";
+
 
 
 
 
 const Payrollsheet = () => {
 
-
-  const { loading, error,  data } = useQuery(QUERY_EMPLOYEE_PAYROLLPAGE)
-  console.log(data)
-  const employees = data?.allEmployees || [];
-  console.log(loading)
-  console.log(error)
-
-
-
-
+  const { loading, data} =  useQuery(QUERY_EMPLOYEE_PAYROLLPAGE);
+  const employeeData = data?.employees
+  console.log(employeeData)
+  if(loading){
+    return ( '....Loading')
+  }
     
   
   
@@ -30,7 +27,7 @@ const Payrollsheet = () => {
  
       <table  className='table' >
         <thead >
-        
+       
         <tr>
           <th scope="col"></th>
           <th scope="col">Name</th>
@@ -39,13 +36,15 @@ const Payrollsheet = () => {
         </tr>
         </thead>
         <tbody>
-        
-          <tr>
-            <th ></th>
-            <td></td>
-            <td></td>
-            <td></td>
+        {employeeData.map(employee => (
+          <tr key={employee._id}>
+            <th >{employee._id}</th>
+            <td >{employee.name}</td>
+            <td >{employee.hoursWorked}</td>
+            <td >{employee.payRate} </td>
           </tr>
+        ))}
+          
       
         </tbody>
    </table>

@@ -1,27 +1,24 @@
 import { gql } from '@apollo/client';
 
 export const ADD_EMPLOYEE = gql`
-mutation Mutation($companyId: ID!, $employee: ID!) {
-  addEmployee(companyId: $companyId, employee: $employee) {
+mutation AddEmployee($name: String, $address: String, $phone: String, $email: String, $federalTaxRate: Int, $stateTaxRate: Int, $hoursWorked: Int, $payRate: Int, $grossPay: Int, $netPay: Int, $federalTaxWithheld: Int, $stateTaxWithheld: Int, $socialSecurityTaxWithheld: Int, $medicareTaxWithheld: Int, $termination: String) {
+  addEmployee(name: $name, address: $address, phone: $phone, email: $email, federalTaxRate: $federalTaxRate, stateTaxRate: $stateTaxRate, hoursWorked: $hoursWorked, payRate: $payRate, grossPay: $grossPay, netPay: $netPay, federalTaxWithheld: $federalTaxWithheld, stateTaxWithheld: $stateTaxWithheld, socialSecurityTaxWithheld: $socialSecurityTaxWithheld, medicareTaxWithheld: $medicareTaxWithheld, termination: $termination) {
     _id
-    name
-    employees {
-      _id
-      name
-      address
-      phone
-      email
-      federalTaxRate
-      stateTaxRate
-      hoursWorked
-      payRate
-      grossPay
-      netPay
-      federalTaxWithheld
-      stateTaxWithheld
-      socialSecurityTaxWithheld
-      medicareTaxWithheld
-    }
+    fullName
+    address
+    phone
+    email
+    federalTaxRate
+    stateTaxRate
+    hoursWorked
+    payRate
+    grossPay
+    netPay
+    federalTaxWithheld
+    stateTaxWithheld
+    socialSecurityTaxWithheld
+    medicareTaxWithheld
+    termination
   }
 }
 `;

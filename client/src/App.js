@@ -17,7 +17,7 @@ import LogoutPage from './Pages/LogoutPage';
 
 
 const client = new ApolloClient({
-  uri: '/graphql',
+  uri: 'http://localhost:3001/graphql',
   cache: new InMemoryCache(),
 });
 
