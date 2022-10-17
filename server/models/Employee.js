@@ -10,7 +10,6 @@ const employeeSchema = new Schema({
     },
     address: {
         type: String,
-        required: true,
         unique: true,
         trim: true,
     },
@@ -52,7 +51,7 @@ const employeeSchema = new Schema({
     },
     termination: {
         type: String,
-        required: true,
+        required: false,
         unique: false,
         trim: true,
     }
