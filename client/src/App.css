@@ -188,4 +188,7 @@ thead  {
   width: 30%;
 }
 
-
+.socialmedia, .testimonial, .promises, .services {
+  padding: 1px 1px 1px;
+  display: flex;
+}

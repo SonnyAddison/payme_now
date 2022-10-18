@@ -7,7 +7,7 @@ const Privacyterms = () => {
 
     return (
 
-    <Container id="tablePrivacy">
+    <Container id="tablePromiseService">
 
     <div className="container">
       <ul className="privacy">
