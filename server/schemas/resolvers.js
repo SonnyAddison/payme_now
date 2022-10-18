@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { Profile, Company, Employee } = require('../models');
+const { Profile, Employee } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -18,17 +18,17 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    company: async (parent, { companyId }) => {
-      return Company.findOne({ _id: companyId }).populate('employees');
-    },
-    companies: async () => {
-      return Company.find();
-    },
+    // // company: async (parent, { companyId }) => {
+    //   return Company.findOne({ _id: companyId }).populate('employees');
+    // },
+    // companies: async () => {
+    //   return Company.find();
+    // },
     employee: async (parent, { employeeId }) => {
       return Employee.findOne({ _id: employeeId });
     },
-    employees: async (parent,) => {
-      return Employee.find();
+    employees: async () => {
+      return Employee.find({})
     },
   },
 
@@ -56,52 +56,51 @@ const resolvers = {
       return { token, profile };
     },
 
-    // Add a third argument to the resolver to access data in our `context`
-    addCompany: async (parent, { profileId, company }, context) => {
-      // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
-      if (context.user) {
-        return Profile.findOneAndUpdate(
-          { _id: profileId },
-          {
-            $addToSet: { company: company },
-          },
-          {
-            new: true,
-            runValidators: true,
-          }
-        );
-      }
-      // If user attempts to execute this mutation and isn't logged in, throw an error
-      throw new AuthenticationError('You need to be logged in!');
-    },
-    // Add an employee to a company
-    addEmployee: async (parent, { companyId, employee }, context) => {
-      if (context.user) {
-        return Company.findOneAndUpdate(
-          { _id: companyId },
-          {
-            $addToSet: { employees: employee },
-          },
-          {
-            new: true,
-            runValidators: true,
-          }
-        );
-      }
-      throw new AuthenticationError('You need to be logged in!');
-    },
-    // Remove an employee from a company
+
+    // Add an employee to a profile
+    addEmployee: async ( { 
+                                  name,
+                                  address,
+                                  phone,
+                                  email,
+                                  federalTaxRate,
+                                  stateTaxRate,
+                                  hoursWorked,
+                                  payRate,
+                                  // grossPay,
+                                  // netPay,
+                                  // federalTaxWithheld,
+                                  // stateTaxWithheld,           
+                                  // socialSecurityTaxWithheld,
+                                  // medicareTaxWithheld,
+                                  termination, 
+                                }
+                                ) => {
+      
+        return newEmployee = await Employee.save({name,
+          address,
+          phone,
+          email,
+          federalTaxRate,
+          stateTaxRate,
+          hoursWorked,
+          payRate,
+          // grossPay,
+          // netPay,
+          // federalTaxWithheld,
+          // stateTaxWithheld,           
+          // socialSecurityTaxWithheld,
+          // medicareTaxWithheld,
+          termination});
+
+          
+      },
+      
+   
+    // Remove an employee from a profile
     removeEmployee: async (parent, { employeeId }, context) => {
       if (context.user) {
-        return Company.findOneAndUpdate(
-          { _id: companyId },
-          {
-            $pull: { employees: employeeId },
-          },
-          {
-            new: true,
-          }
-        );
+        return Employee.findOneAndDelete({ _id: employeeId });
       }
       throw new AuthenticationError('You need to be logged in!');
     },
@@ -114,16 +113,16 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
     // Make it so a logged in user can only remove a skill from their own profile
-    removeCompany: async (parent, { company }, context) => {
-      if (context.user) {
-        return Profile.findOneAndUpdate(
-          { _id: context.user._id },
-          { $pull: { company: company } },
-          { new: true }
-        );
-      }
-      throw new AuthenticationError('You need to be logged in!');
-    },
+    // removeCompany: async (parent, { company }, context) => {
+    //   if (context.user) {
+    //     return Profile.findOneAndUpdate(
+    //       { _id: context.user._id },
+    //       { $pull: { company: company } },
+    //       { new: true }
+    //     );
+    //   }
+    //   throw new AuthenticationError('You need to be logged in!');
+    // },
   },
 };
 

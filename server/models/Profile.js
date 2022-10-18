@@ -19,13 +19,19 @@ const profileSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  company: [
+  company: {
+      type: String,
+      required: false,
+      unique: true,
+      trim: true,
+    },
+  employee: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Company',
+      ref: 'Employee',
     },
   ],
-});
+  });
 
 // set up pre-save middleware to create password
 profileSchema.pre('save', async function (next) {

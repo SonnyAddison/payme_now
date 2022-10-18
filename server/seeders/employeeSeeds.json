@@ -1,11 +1,53 @@
 [
     {
         "name": "Brian Jr. Kernighans",
-        "address": "That one place",
-        "phone": 5204200000,
+        "address": "That one place 0001",
+        "phone": "5204200000",
+        "email": "brian00@email.com",
         "federalTaxRate": 0,
         "stateTaxRate": 5,
         "hoursWorked": 17,
         "payRate": 1
+    },
+    {
+        "name": "Brian Jr. V.2 Kernighans",
+        "address": "That one place 0002",
+        "phone": "5204200001",
+        "email": "brian01@email.com",
+        "federalTaxRate": 0,
+        "stateTaxRate": 5,
+        "hoursWorked": 17,
+        "payRate": 1
+    },
+    {
+        "name": "Brian Jr. V.3 Kernighans",
+        "address": "That one place 0003",
+        "phone": "5204200002",
+        "email": "brian02@email.com",
+        "federalTaxRate": 0,
+        "stateTaxRate": 5,
+        "hoursWorked": 17,
+        "payRate": 1
+    },
+    {
+        "name": "Brian Jr. V.4 Kernighans",
+        "address": "That one place 0004",
+        "phone": "5203557377",
+        "email": "brian03@email.com",
+        "federalTaxRate": 0,
+        "stateTaxRate": 5,
+        "hoursWorked": 70,
+        "payRate": 40
+    },
+    {
+        "name": "Johnny Tsunami",
+        "address": "4242 Wilshire",
+        "phone": "6025987895",
+        "email": "Johnny04@email.com",
+        "federalTaxRate": 0,
+        "stateTaxRate": 6,
+        "hoursWorked": 40,
+        "payRate": 50
     }
+
 ]
