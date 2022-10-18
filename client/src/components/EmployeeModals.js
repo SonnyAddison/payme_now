@@ -16,33 +16,33 @@ const AddEmployeeModal = () => {
     const handleDelClose = () => setshowDel(false);
     const handleDelShow = () => setshowDel(true);
 
-    const [allValues, setAllValues] = useState({
+
+    const initialValues = {
+      name: '',
       address: '',
       phone: '',
       email: '',
-      fedTax: '',
-      status: '',
+      federalTaxRate: '',
+      maritalStatus: '',
       hourlyPay:'',
       stateTax: ''
+    }
 
-   });
+    const [values, setValues] = useState(initialValues);
 
 
    const [addEmployee, {error}] = useMutation(ADD_EMPLOYEE)
 
    const changeHandler = e => {
-    setAllValues(allValues => {
-      
-      return {...allValues, [e.target.name]: e.target.value}
-    })
+    setValues({...values, [e.target.name]: e.target.value})
    }
-
+   
    const handleFormSubmit = async (e) => {
+    console.log(values)
     e.preventDefault();
+    
     try {
-      const { data } = await addEmployee({
-        ...allValues
-      })
+      const { data } = await addEmployee({...values})
      console.log(data)
     }catch (err) {
       console.error(err)
@@ -60,7 +60,7 @@ const AddEmployeeModal = () => {
             <Modal.Title>Delete an Employee</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <form onSubmit={handleFormSubmit} className="modalBody">
+            <form  className="modalBody">
               <label >Employee Name:</label>
               <input type="text" id="employeeId" name="Id" ></input>
               <label >Employee ID:</label>
@@ -72,7 +72,7 @@ Enter text here...
             </form>
           </Modal.Body>
           <Modal.Footer>
-        <Button variant="secondary" onClick={handleDelClose}>
+        <Button variant="secondary"  onClick={handleDelClose}>
           Close
         </Button>
         <Button variant="primary" value="delete" onClick={handleDelClose} >
@@ -89,7 +89,7 @@ Enter text here...
         <form onSubmit={handleFormSubmit} className="modalBody">
            
   <label >Full Name:</label>
-  <input type="text" id="fullName" name="name"  onChange= {changeHandler} />
+  <input type="text" id="name" name="name"  onChange= {changeHandler} />
   <label >Address:</label>
   <input type="text" id="address" name="address"  onChange= {changeHandler} />
   <label >Phone:</label>
@@ -102,15 +102,15 @@ Enter text here...
   <input type="text" id="hourlyPay" name="hourlyPay" placeholder="$" onChange= {changeHandler} />
   <label >Marital Status:</label>
        <div className="radioBtns">
-      <input type="radio" id="married"
+      <input type="radio" value="married" id="married"
        name="maritalStatus"  onChange= {changeHandler} />
       <label >Married</label>
 
       <input type="radio" id="single"
-       name="maritalStatus"  onChange= {changeHandler} />
+       name="maritalStatus"  value="single" onChange= {changeHandler} />
       <label >Single</label>
 
-      <input type="radio" id="headOfHouse"
+      <input type="radio" value="headOfHouse" id="headOfHouse"
        name="maritalStatus" onChange= {changeHandler} />
       <label>Head of Household</label>
      </div>
@@ -137,7 +137,7 @@ Enter text here...
         <Button variant="secondary" onClick={handleClose}>
           Close
         </Button>
-        <Button variant="primary" onClick={handleClose}>
+        <Button variant="primary" onClick={handleFormSubmit}>
           Save Changes
         </Button>
       </Modal.Footer>
