@@ -58,7 +58,7 @@ const resolvers = {
 
 
     // Add an employee to a profile
-    addEmployee: async (parent, { 
+    addEmployee: async ( { 
                                   name,
                                   address,
                                   phone,
@@ -77,7 +77,7 @@ const resolvers = {
                                 }
                                 ) => {
       
-        const newEmployee = await Employee.create({name,
+        return newEmployee = await Employee.save({name,
           address,
           phone,
           email,
@@ -93,7 +93,7 @@ const resolvers = {
           // medicareTaxWithheld,
           termination});
 
-          return newEmployee;
+          
       },
       
    

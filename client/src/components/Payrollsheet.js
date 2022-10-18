@@ -29,7 +29,7 @@ const Payrollsheet = () => {
         <thead >
        
         <tr>
-          <th scope="col"></th>
+          <th scope="col">Employee ID</th>
           <th scope="col">Name</th>
           <th scope="col">Hours Worked</th>
           <th scope="col">Hourly Rate</th>
