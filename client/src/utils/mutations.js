@@ -34,8 +34,7 @@ mutation AddEmployee($name: String, $address: String, $phone: String, $email: St
 #     # medicareTaxWithheld
 #     termination
 #   }
-# }
-`;
+# }`;
 
 export const ADD_PROFILE = gql`
 mutation Mutation($name: String!, $email: String!, $password: String!) {
