@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.319f3596.css",
+    "main.js": "/static/js/main.de38fe36.js",
+    "static/js/787.154c8a1c.chunk.js": "/static/js/787.154c8a1c.chunk.js",
+    "static/media/image.png": "/static/media/image.f48e72176f5e6770a402.png",
+    "static/media/promise8.jpg": "/static/media/promise8.d9877419811cbe53de60.jpg",
+    "static/media/promise7.jpg": "/static/media/promise7.db03a763c0b418c98acb.jpg",
+    "static/media/promise5.jpg": "/static/media/promise5.e8d61b711fdcc9da42b8.jpg",
+    "static/media/testimonial7.jpg": "/static/media/testimonial7.65f028177216eab73038.jpg",
+    "static/media/promise6.jpg": "/static/media/promise6.36b6a4bd0e7c93baa653.jpg",
+    "static/media/promise1.jpg": "/static/media/promise1.382f16af1771f5a913f6.jpg",
+    "static/media/promise4.jpg": "/static/media/promise4.a85b35fc540b971325bc.jpg",
+    "static/media/promise2.jpg": "/static/media/promise2.26e6c97ac51a6ec40503.jpg",
+    "static/media/promise3.jpg": "/static/media/promise3.7e8f94a2bae4089e4eec.jpg",
+    "static/media/testimonial3.jpg": "/static/media/testimonial3.02f473189fae21ab5de5.jpg",
+    "static/media/testimonial6.jpg": "/static/media/testimonial6.bca5183e1884c3617bf1.jpg",
+    "static/media/whychoose.jpg": "/static/media/whychoose.8b34495bc75281d85cf4.jpg",
+    "static/media/testimonial4.jpg": "/static/media/testimonial4.f94853902360f6212eef.jpg",
+    "static/media/testimonial1.jpg": "/static/media/testimonial1.e4166198c0502a908ce5.jpg",
+    "static/media/testimonial2.jpg": "/static/media/testimonial2.4a23922152f622e7b19d.jpg",
+    "static/media/testimonial5.jpg": "/static/media/testimonial5.556cbf4c5afa51e08761.jpg",
+    "static/media/step2.jpg": "/static/media/step2.b45585a58c13429b4e5a.jpg",
+    "static/media/step4.jpg": "/static/media/step4.9917131f7218de81b746.jpg",
+    "static/media/step5.jpg": "/static/media/step5.9bfa3c04773e7466597c.jpg",
+    "static/media/step3.jpg": "/static/media/step3.cd75edd6abcc9dc731a0.jpg",
+    "static/media/step1.jpg": "/static/media/step1.cf92c073562648385130.jpg",
+    "static/media/step6.jpg": "/static/media/step6.7bf9857c502450ee0496.jpg",
+    "index.html": "/index.html",
+    "main.319f3596.css.map": "/static/css/main.319f3596.css.map",
+    "main.de38fe36.js.map": "/static/js/main.de38fe36.js.map",
+    "787.154c8a1c.chunk.js.map": "/static/js/787.154c8a1c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.319f3596.css",
+    "static/js/main.de38fe36.js"
+  ]
+}
