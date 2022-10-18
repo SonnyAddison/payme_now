@@ -37,7 +37,7 @@ mutation AddEmployee($name: String, $address: String, $phone: String, $email: St
 # }`;
 
 export const ADD_PROFILE = gql`
-mutation Mutation($name: String!, $email: String!, $password: String!) {
+mutation AddProfile($name: String!, $email: String!, $password: String!) {
   addProfile(name: $name, email: $email, password: $password) {
     token
     profile {
@@ -49,7 +49,7 @@ mutation Mutation($name: String!, $email: String!, $password: String!) {
 }`;
 
 export const LOGIN_PROFILE = gql`
-mutation Mutation($email: String!, $password: String!) {
+mutation LoginIn($email: String!, $password: String!) {
   login(email: $email, password: $password) {
     token
     profile {

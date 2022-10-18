@@ -39,6 +39,8 @@ const resolvers = {
 
       return { token, profile };
     },
+
+    //Login mutation
     login: async (parent, { email, password }) => {
       const profile = await Profile.findOne({ email });
 
